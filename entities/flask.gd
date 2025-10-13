@@ -15,7 +15,12 @@ func _can_drop_data(_pos, data):
 	return typeof(data) == TYPE_OBJECT and data is FireworkResource
 
 # Takes the data being dragged and processes it
-func _drop_data(_pos, data):
-	flask_color = data.color_modifier
-	flask_size = data.size_modifier
-	flask_corners = data.corner_modifier
+func _drop_data(_pos: Vector2, data: Variant):
+	if data is not FireworkResource:
+		return
+		
+	var res: FireworkResource = data
+	
+	flask_color = res.color_modifier
+	flask_size = res.size_modifier
+	flask_corners = res.corner_modifier
