@@ -12,7 +12,7 @@ func calc_values() -> void:
 # Returns a boolean by examining the data being dragged to see if it's valid
 # to drop here
 func _can_drop_data(_pos, data):
-	return typeof(data) == TYPE_OBJECT and data is Resource
+	return typeof(data) == TYPE_OBJECT and data is FireworkResource
 
 # Takes the data being dragged and processes it
 func _drop_data(_pos, data):
