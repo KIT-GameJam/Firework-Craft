@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://mr0nop6jx4b2"]
+
+[ext_resource type="Script" uid="uid://oa115hpil50" path="res://entities/flask/particles.gd" id="1_85akk"]
+[ext_resource type="Script" uid="uid://dgxkxyp7vn2dk" path="res://entities/flask/particles_multi_mesh.gd" id="2_ycvrc"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_85akk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycvrc"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_dfeej"]
+material = SubResource("StandardMaterial3D_ycvrc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_hliqq"]
+
+[node name="Particles" type="Node2D"]
+script = ExtResource("1_85akk")
+color = Color(1, 0, 1, 1)
+corners = 7
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 100
+lifetime = 2.0
+speed_scale = 3.0
+randomness = 1.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 100.0
+scale_amount_min = 8.0
+scale_amount_max = 12.0
+
+[node name="MultiMesh" type="MultiMeshInstance2D" parent="."]
+scale = Vector2(200, 200)
+multimesh = SubResource("MultiMesh_85akk")
+script = ExtResource("2_ycvrc")
+
+[node name="Sphere" type="MeshInstance2D" parent="MultiMesh"]
+mesh = SubResource("SphereMesh_dfeej")
+
+[node name="Corner1" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(0, -0.44)
+rotation = 0.7853982
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
+
+[node name="Corner2" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(0.32, -0.32)
+rotation = 1.5707964
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
+
+[node name="Corner3" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(0.44000003, -2.1457673e-08)
+rotation = 2.3561945
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
+
+[node name="Corner4" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(0.32, 0.32)
+rotation = 1.5707964
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
+
+[node name="Corner5" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(0, 0.44000003)
+rotation = 2.3561945
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
+
+[node name="Corner6" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(-0.3199999, 0.32000014)
+rotation = 1.5707964
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
+
+[node name="Corner7" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(-0.44, 2.9802322e-08)
+rotation = 2.3561945
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
+
+[node name="Corner8" type="MeshInstance2D" parent="MultiMesh"]
+position = Vector2(-0.32000002, -0.32000008)
+rotation = 1.5707964
+scale = Vector2(0.29000002, 0.29000002)
+mesh = SubResource("BoxMesh_hliqq")
