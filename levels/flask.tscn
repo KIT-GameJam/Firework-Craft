@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c03f4e3i006pp"]
+
+[ext_resource type="Script" uid="uid://dckixa4yd5csh" path="res://levels/flask.gd" id="1_ubm4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rs4y"]
+
+[node name="Flask" type="Node2D"]
+script = ExtResource("1_ubm4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4rs4y")
