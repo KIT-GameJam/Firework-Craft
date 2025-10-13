@@ -1,26 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://mr0nop6jx4b2"]
+[gd_scene load_steps=8 format=3 uid="uid://mr0nop6jx4b2"]
 
 [ext_resource type="Script" uid="uid://oa115hpil50" path="res://entities/flask/particles.gd" id="1_85akk"]
 [ext_resource type="Script" uid="uid://dgxkxyp7vn2dk" path="res://entities/flask/particles_multi_mesh.gd" id="2_ycvrc"]
+[ext_resource type="Shader" uid="uid://cxyah2srfigsa" path="res://other/water.gdshader" id="3_8ko70"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_85akk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycvrc"]
-vertex_color_use_as_albedo = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8my8b"]
+shader = ExtResource("3_8ko70")
+shader_parameter/noise_tex_size = Vector2(256, 256)
+shader_parameter/color_amount = 5
+shader_parameter/wave_speed = 1.0
+shader_parameter/frequency_x = 10.0
+shader_parameter/frequency_y = 10.0
+shader_parameter/amplitude_x = 0.02
+shader_parameter/amplitude_y = 0.02
+shader_parameter/pixel_amount = 64.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_dfeej"]
-material = SubResource("StandardMaterial3D_ycvrc")
+material = SubResource("ShaderMaterial_8my8b")
 
 [sub_resource type="BoxMesh" id="BoxMesh_hliqq"]
 
 [node name="Particles" type="Node2D"]
 script = ExtResource("1_85akk")
-color = Color(1, 0, 1, 1)
-corners = 7
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 100
-lifetime = 2.0
+lifetime = 6.0
 speed_scale = 3.0
 randomness = 1.0
 particle_flag_align_y = true

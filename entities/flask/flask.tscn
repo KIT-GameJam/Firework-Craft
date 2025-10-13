@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://c03f4e3i006pp"]
 
-[ext_resource type="Script" uid="uid://dckixa4yd5csh" path="res://entities/flask.gd" id="1_ubm4n"]
+[ext_resource type="Script" uid="uid://dckixa4yd5csh" path="res://entities/flask/flask.gd" id="1_ubm4n"]
+[ext_resource type="Texture2D" uid="uid://bephr0yqnx4o1" path="res://textures/flask.png" id="2_3wnpu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rs4y"]
-
-[node name="Flask" type="Node2D"]
+[node name="Flask" type="TextureRect"]
+clip_children = 1
+offset_right = 324.0
+texture = ExtResource("2_3wnpu")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("1_ubm4n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4rs4y")
