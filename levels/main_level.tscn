@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyfvcuxi210mg"]
+[gd_scene load_steps=10 format=3 uid="uid://cyfvcuxi210mg"]
 
 [ext_resource type="Script" uid="uid://23td8m5q5kxt" path="res://levels/main_level.gd" id="1_ilwad"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_yb8kn"]
 [ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/counter.png" id="2_yb8kn"]
-[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
+[ext_resource type="PackedScene" uid="uid://bowvutyly8gqu" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
 [ext_resource type="PackedScene" uid="uid://c03f4e3i006pp" path="res://entities/flask/flask.tscn" id="4_55n5f"]
+[ext_resource type="PackedScene" uid="uid://g32qgqix4jnk" path="res://entities/requests/request.tscn" id="4_yb8kn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43k3a"]
 
@@ -54,6 +55,9 @@ layout_mode = 2
 [node name="Requests" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/Requests" instance=ExtResource("4_yb8kn")]
+layout_mode = 2
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2

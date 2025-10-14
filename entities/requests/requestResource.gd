@@ -1,6 +1,10 @@
 extends Resource
 class_name RequestResource
 
-@export var size: int
-@export var color: int # 0-11 (12 Verschiedene Farben)
-@export var corners: int
+var shapeTollerance: int = 1
+var colorTollerance: int = 1
+var sizeTollerance: int = 1
+
+var size: int
+var color: int # 0-11 (12 Verschiedene Farben)
+var corners: int

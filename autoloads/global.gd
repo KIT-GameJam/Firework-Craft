@@ -2,7 +2,7 @@ extends Node
 
 var game_manager : GameManager = null
 var selected_res : AbstractIngredient = null
-var selectedRequest: RequestResource = null
+var selectedRequest: Request = null
 
 const colors = {
 	1: Color('f4e601'), # yellow
