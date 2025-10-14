@@ -1,22 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyfvcuxi210mg"]
+[gd_scene load_steps=12 format=3 uid="uid://cyfvcuxi210mg"]
 
 [ext_resource type="Script" uid="uid://23td8m5q5kxt" path="res://levels/main_level.gd" id="1_ilwad"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_yb8kn"]
 [ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/counter.png" id="2_yb8kn"]
-[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/ingredients/banana_ingredient.tscn" id="3_wg11f"]
+[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
 [ext_resource type="PackedScene" uid="uid://c03f4e3i006pp" path="res://entities/flask/flask.tscn" id="4_55n5f"]
-[ext_resource type="PackedScene" uid="uid://c3b0ii5sxk6bg" path="res://entities/ingredients/boot_ingredient.tscn" id="4_ggk2x"]
-[ext_resource type="PackedScene" uid="uid://dfgy1oledarig" path="res://entities/ingredients/clip_ingredient.tscn" id="5_5br84"]
-[ext_resource type="PackedScene" uid="uid://7vwmnpeyubxc" path="res://entities/ingredients/ducky_ingredient.tscn" id="7_arlwx"]
-[ext_resource type="PackedScene" uid="uid://by3x2crtpc51a" path="res://entities/ingredients/tire_ingredient.tscn" id="8_t6wdf"]
+[ext_resource type="PackedScene" uid="uid://c3b0ii5sxk6bg" path="res://entities/Ingredients/boot_ingredient.tscn" id="4_ggk2x"]
+[ext_resource type="PackedScene" uid="uid://dfgy1oledarig" path="res://entities/Ingredients/clip_ingredient.tscn" id="5_5br84"]
+[ext_resource type="PackedScene" uid="uid://7vwmnpeyubxc" path="res://entities/Ingredients/ducky_ingredient.tscn" id="7_arlwx"]
+[ext_resource type="PackedScene" uid="uid://by3x2crtpc51a" path="res://entities/Ingredients/tire_ingredient.tscn" id="8_t6wdf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43k3a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ttu8v"]
 font_size = 42
 font_color = Color(0.06963961, 0.12961286, 0.3778041, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yb8kn"]
 
 [node name="MainLevel" type="Control"]
 layout_mode = 3
@@ -29,6 +27,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_yb8kn")
 script = ExtResource("1_ilwad")
+ingredient_scenes = Array[PackedScene]([ExtResource("3_wg11f"), ExtResource("4_ggk2x"), ExtResource("5_5br84"), ExtResource("7_arlwx"), ExtResource("8_t6wdf")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -56,21 +55,9 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Requests" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/Requests"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-layout_mode = 2
-script = null
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -102,37 +89,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
 
-[node name="Banana3" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
-layout_mode = 2
-
-[node name="Tire" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("8_t6wdf")]
-layout_mode = 2
-
-[node name="Boot" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("4_ggk2x")]
-layout_mode = 2
-
-[node name="Banana2" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
-layout_mode = 2
-
-[node name="Duck" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("7_arlwx")]
-layout_mode = 2
-
-[node name="Banana4" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
-layout_mode = 2
-
-[node name="Clip" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("5_5br84")]
-layout_mode = 2
-
-[node name="Banana" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
-layout_mode = 2
-
 [node name="Flask" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("4_55n5f")]
 clip_children = 2
 layout_mode = 2
-
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 164
-theme_override_styles/separator = SubResource("StyleBoxEmpty_yb8kn")
 
 [connection signal="timeout" from="Timer" to="." method="_day_over"]

@@ -1,8 +1,22 @@
 [gd_scene load_steps=2 format=3 uid="uid://d5ph0vlkp1tu"]
 
-[ext_resource type="Script" uid="uid://dng7n4had58ry" path="res://entities/ingredients/abstractIngredient.gd" id="1_8uneu"]
+[ext_resource type="Script" uid="uid://dng7n4had58ry" path="res://entities/Ingredients/abstractIngredient.gd" id="1_8uneu"]
 
 [node name="AbstractResourceObject" type="TextureRect"]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -426.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("1_8uneu")
