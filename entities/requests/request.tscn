@@ -34,7 +34,7 @@ label_settings = SubResource("LabelSettings_stvmc")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Control" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,8 +48,10 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
-theme_override_constants/margin_left = 30
+theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -250
 
-[node name="Particles" parent="Control" instance=ExtResource("5_dsi66")]
+[node name="Particles" parent="MarginContainer" instance=ExtResource("5_dsi66")]
 layout_mode = 2

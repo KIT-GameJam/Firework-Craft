@@ -1,10 +1,15 @@
 extends Resource
 class_name RequestResource
 
-var shapeTollerance: int = 1
-var colorTollerance: int = 1
-var sizeTollerance: int = 1
+const cornersTollerance: int = 0
+const colorTollerance: int = 1
+const sizeTollerance: int = 2
 
 var size: int
 var color: int # 0-11 (12 Verschiedene Farben)
 var corners: int
+
+func _init(r_size: int, r_color: int, r_corners: int) -> void:
+	size = r_size
+	color = r_color
+	corners = r_corners
