@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyfvcuxi210mg"]
+[gd_scene load_steps=9 format=3 uid="uid://cyfvcuxi210mg"]
 
 [ext_resource type="Script" uid="uid://23td8m5q5kxt" path="res://levels/main_level.gd" id="1_ilwad"]
-[ext_resource type="Texture2D" uid="uid://bugrq8paq2d7t" path="res://textures/Keycap.svg" id="2_55n5f"]
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_yb8kn"]
 [ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/counter.png" id="2_yb8kn"]
 [ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
 [ext_resource type="PackedScene" uid="uid://c03f4e3i006pp" path="res://entities/flask/flask.tscn" id="4_55n5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43k3a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttu8v"]
+font_size = 42
+font_color = Color(0.06963961, 0.12961286, 0.3778041, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yb8kn"]
 
@@ -17,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_yb8kn")
 script = ExtResource("1_ilwad")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -44,17 +51,27 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+[node name="Requests" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_55n5f")
-expand_mode = 1
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 76
+theme_override_styles/separator = SubResource("StyleBoxEmpty_43k3a")
 
 [node name="TimerLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-text = "Timer"
+text = "X"
+label_settings = SubResource("LabelSettings_ttu8v")
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_43k3a")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -68,9 +85,11 @@ size_flags_vertical = 3
 columns = 3
 
 [node name="AbstractResourceObject11" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
+visible = false
 layout_mode = 2
 
 [node name="AbstractResourceObject12" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
+visible = false
 layout_mode = 2
 
 [node name="AbstractResourceObject13" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
