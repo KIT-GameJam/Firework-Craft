@@ -1,7 +1,17 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://hheneshfv1b2"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://hheneshfv1b2"]
 
 [ext_resource type="FontFile" uid="uid://cvr2f1gjt71bc" path="res://other/fonts/Amelies.ttf" id="1_ge066"]
 [ext_resource type="Texture2D" uid="uid://b23e4kqj4o6dv" path="res://textures/Revert.svg" id="1_r1020"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge066"]
+bg_color = Color(0.3882353, 0.015686275, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prsbj"]
+bg_color = Color(0.25882354, 0.015686275, 0, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4dl"]
 content_margin_left = 8.0
@@ -14,14 +24,30 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ge066"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2y3n"]
+bg_color = Color(0.3882353, 0.015686275, 0, 1)
+
 [resource]
 default_font = ExtResource("1_ge066")
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 25
+FlatButton/colors/icon_hover_color = Color(0, 0, 0, 1)
+FlatButton/styles/hover = SubResource("StyleBoxFlat_ge066")
+FlatButton/styles/normal = SubResource("StyleBoxFlat_prsbj")
 HeaderLarge/font_sizes/font_size = 56
 HeaderLarge/fonts/font = ExtResource("1_ge066")
-HeaderMedium/font_sizes/font_size = 24
+HeaderMedium/font_sizes/font_size = 35
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_0d4dl")
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 5
+ProgressBar/font_sizes/font_size = 50
+ProgressBar/styles/background = SubResource("StyleBoxTexture_ge066")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_c2y3n")
 RevertButton/icons/icon = ExtResource("1_r1020")

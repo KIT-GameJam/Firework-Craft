@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://u1l0uufcdwif"]
+[gd_scene load_steps=3 format=3 uid="uid://u1l0uufcdwif"]
 
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_nk6t1"]
 [ext_resource type="Script" uid="uid://b8kvsir2e8n1b" path="res://ui/screens/day-over-screen/day_over_screen.gd" id="2_hheev"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_hheev"]
 
 [node name="DayOverScreen" type="Control"]
 layout_mode = 3
@@ -25,26 +23,31 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_nk6t1")
 theme_type_variation = &"HeaderLarge"
 text = "Day 1"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 500)
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 1
+theme = ExtResource("1_nk6t1")
+theme_type_variation = &"HeaderMedium"
 text = "How good did you craft today?"
-label_settings = SubResource("LabelSettings_hheev")
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_nk6t1")
 step = 1.0
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme = ExtResource("1_nk6t1")
+theme_type_variation = &"FlatButton"
 text = "Continue"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
