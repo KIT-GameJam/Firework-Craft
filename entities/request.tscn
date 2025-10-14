@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bc1082dxwa7xh" path="res://entities/request.gd" id="1_a1vif"]
 
-[node name="Request" type="Node2D"]
+[node name="Request" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_a1vif")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
