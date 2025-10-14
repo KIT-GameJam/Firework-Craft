@@ -78,6 +78,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="IngredientTable" type="GridContainer" parent="VBoxContainer/HBoxContainer2"]
+z_index = 1
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -107,13 +108,20 @@ layout_mode = 2
 [node name="AbstractResourceObject4" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
 
+[node name="Flask" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("4_55n5f")]
+clip_children = 2
+layout_mode = 2
+
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 164
 theme_override_styles/separator = SubResource("StyleBoxEmpty_yb8kn")
 
-[node name="Flask" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("4_55n5f")]
-clip_children = 2
-layout_mode = 2
-
 [connection signal="timeout" from="Timer" to="." method="_day_over"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject11" to="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject11" method="mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject12" to="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject12" method="mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject13" to="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject13" method="mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject" to="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject" method="mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject2" to="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject2" method="mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject3" to="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject3" method="mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject4" to="VBoxContainer/HBoxContainer2/IngredientTable/AbstractResourceObject4" method="mouse_entered"]

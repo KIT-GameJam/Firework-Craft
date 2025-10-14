@@ -4,6 +4,7 @@ class_name AbstractIngredient
 @export var resourceData: FireworkResource
 var active: bool = false
 var dif: Vector2 = Vector2.ZERO
+var origin: Vector2
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -12,22 +13,14 @@ func _ready() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
+			#if not active:
+			#	origin = global_position
 			dif = global_position - get_viewport().get_mouse_position()
 			active = true
-			
+			Global.selected_res = self
 		else:
 			active = false
-
+			Global.selected_res = null
+			#global_position = origin
 	elif event is InputEventMouseMotion and active:
 		global_position = get_viewport().get_mouse_position() + dif
-
-func _get_drag_data(_pos: Vector2) -> FireworkResource:
-	var res := TextureRect.new()
-	res.texture = texture
-
-	var preview := Control.new()
-	preview.add_child(res)
-	res.position = -0.5 * res.size
-	set_drag_preview(preview)
-
-	return resourceData
