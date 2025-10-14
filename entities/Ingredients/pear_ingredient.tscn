@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://v4ji6exn8ngp"]
+
+[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/ingredients/abstractIngredient.tscn" id="1_h78ot"]
+[ext_resource type="Texture2D" uid="uid://bsyfwm38fiif7" path="res://textures/ingredients/pear.png" id="2_13f6j"]
+[ext_resource type="Script" uid="uid://dfnp38cb0upof" path="res://entities/ingredients/fireworkResource.gd" id="3_w5t8o"]
+
+[sub_resource type="Resource" id="Resource_0nrfk"]
+script = ExtResource("3_w5t8o")
+size_modifier = -1
+color_modifier = 3
+corner_modifier = 3
+metadata/_custom_type_script = "uid://dfnp38cb0upof"
+
+[node name="Pear" instance=ExtResource("1_h78ot")]
+texture = ExtResource("2_13f6j")
+resourceData = SubResource("Resource_0nrfk")
