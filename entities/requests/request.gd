@@ -38,9 +38,11 @@ func _gui_input(event: InputEvent) -> void:
 			diff = global_position - get_viewport().get_mouse_position()
 			active = true
 			Global.selectedRequest = self
+			Global.selected = true
 		else:
 			global_position = origin
 			active = false
+			Global.selected = false
 
 	elif event is InputEventMouseMotion and active:
 		global_position = get_viewport().get_mouse_position() + diff

@@ -35,6 +35,10 @@ func _mouse_entered() -> void:
 	ingredients_in_me = Global.selected and not Global.selected_res == null
 	if not ingredients_in_me:
 		Global.selected_res = null
+		
+	requestHover = Global.selected and not Global.selectedRequest == null
+	if not requestHover:
+		Global.selectedRequest = null
 	
 func _mouse_exited() -> void:
 	ingredients_in_me = false
