@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d5ph0vlkp1tu"]
 
-[ext_resource type="Script" uid="uid://dng7n4had58ry" path="res://entities/Ingredients/abstractIngredient.gd" id="1_8uneu"]
+[ext_resource type="Script" uid="uid://dng7n4had58ry" path="res://entities/ingredients/abstractIngredient.gd" id="1_8uneu"]
 
 [node name="AbstractResourceObject" type="TextureRect"]
 custom_minimum_size = Vector2(150, 150)
