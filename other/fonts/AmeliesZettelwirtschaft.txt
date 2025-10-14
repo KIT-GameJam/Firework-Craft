@@ -24,7 +24,7 @@ letterspacing and even produce a number of ligatures (connected letter forms)
 even without OpenType features  (tt ff ft tz and others). 
 
 
-Copyright (c) 2023, Andreas Höfeld,
+Copyright (c) 2023, Andreas HÃ¶feld,
 with Reserved Font Names 'Amelies Zettelwirtschaft' and 'Zettelwirtschaft'.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.

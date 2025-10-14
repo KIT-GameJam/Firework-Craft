@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://hheneshfv1b2"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://hheneshfv1b2"]
 
 [ext_resource type="FontFile" uid="uid://cvr2f1gjt71bc" path="res://other/fonts/Amelies.ttf" id="1_ge066"]
 [ext_resource type="Texture2D" uid="uid://b23e4kqj4o6dv" path="res://textures/Revert.svg" id="1_r1020"]
@@ -14,6 +14,8 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="SystemFont" id="SystemFont_ge066"]
+
 [resource]
 default_font = ExtResource("1_ge066")
 HeaderLarge/font_sizes/font_size = 56
@@ -25,3 +27,4 @@ MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_0d4dl")
 RevertButton/icons/icon = ExtResource("1_r1020")
+TooltipLabel/fonts/font = SubResource("SystemFont_ge066")

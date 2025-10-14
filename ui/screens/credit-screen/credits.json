@@ -12,12 +12,8 @@
 		"url": "https://github.com/Godot-Stammtisch-Karlsruhe/godot-game-template"
 	},
 	{
-		"name": "Sample Asset",
-		"descriptor": "Sample description (optional)"
-	},
-	{
-		"name": "Godot Game Template",
-		"descriptor": "Universal game template targeted at game jams.",
+		"name": "Amelies Zettelwirtschaft (Font)",
+		"descriptor": "Main Font used in the game.",
 		"license_file": "res://other/fonts/AmeliesZettelwirtschaft.txt",
 		"url": "https://fontesk.com/amelies-zettelwirtschaft-ah-font/"
 	},
