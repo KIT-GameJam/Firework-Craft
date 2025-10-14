@@ -19,6 +19,8 @@ func set_flask_size(new_size: int):
 	particles.lifetime = 2 + .2 * new_size
 	particles.scale_amount_min = particle_scale - 2
 	particles.scale_amount_max = particle_scale + 2
+	particles.amount = particle_scale * 10
+	particles.speed_scale = 3 + .3 * new_size
 
 func set_flask_corners(num_corners: int):
 	form.set_corners(num_corners)
