@@ -14,6 +14,7 @@ func _gui_input(event: InputEvent) -> void:
 		if event.pressed:
 			dif = global_position - get_viewport().get_mouse_position()
 			active = true
+			
 		else:
 			active = false
 

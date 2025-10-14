@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhnbko3x404ly"]
+[gd_scene load_steps=3 format=3 uid="uid://bowvutyly8gqu"]
 
 [ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/Ingredients/abstractIngredient.tscn" id="1_3kl3t"]
 [ext_resource type="Texture2D" uid="uid://ujbeg51ilnry" path="res://textures/ingredients/banana.png" id="2_5legj"]
@@ -14,4 +14,3 @@ size_flags_vertical = 3
 texture = ExtResource("2_5legj")
 expand_mode = 1
 stretch_mode = 4
-script = null

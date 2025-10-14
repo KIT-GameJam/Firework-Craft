@@ -11,16 +11,14 @@ extends Control
 @export var textFieldSize: Array[Vector2]
 
 var expected_product: RequestResource
+var origin: Vector2
+
 var currentTexture: Texture2D
+var diff: Vector2 = Vector2.ZERO
+var active: bool = false
 
 @onready var label: Label = $Label
 @onready var textureRect: TextureRect = $"."
-
-
-# Size     Pos
-# 230, 65, 110, 155
-# 265, 65, 80, 155
-
 
 func _ready() -> void:
 	label.text = textDescription # ???
@@ -29,13 +27,11 @@ func _ready() -> void:
 	currentTexture = textures[index]
 	label.position = textFieldPos[index]
 	label.size = textFieldSize[index]
-	
 
 # farbe array 
 # dict für farbwerte 
 # farben mischen wird in der mitte geschaut
 # farb tolleranz auf distanz im array zum farbwert
-
 
 func is_as_requested(final_product: FireworkResource) -> bool:
 	var shapeDiff: int = abs(final_product.corner_modifier - expected_product.corners)
@@ -44,18 +40,16 @@ func is_as_requested(final_product: FireworkResource) -> bool:
 	
 	return shapeDiff <= shapeTollerance && colorDiff <= colorTollerance && sizeDiff <= sizeTollerance
 
-func _get_drag_data(_pos: Vector2) -> RequestResource:
-	print("debug")
-	# Use another resource as drag preview.
-	var res = Label.new()
-	res.text = "Test"
-	# res.texture = currentTexture
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			if not active:
+				origin = global_position
+			diff = global_position - get_viewport().get_mouse_position()
+			active = true
+		else:
+			global_position = origin
+			active = false
 
-	# Allows us to center the resource on the mouse
-	var preview = Control.new()
-	preview.add_child(res)
-	res.position = -0.5 * res.size
-	# Sets what the user will see they are dragging
-	set_drag_preview(preview)
-	# Return resource as drag data
-	return expected_product;
+	elif event is InputEventMouseMotion and active:
+		global_position = get_viewport().get_mouse_position() + diff

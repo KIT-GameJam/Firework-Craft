@@ -18,7 +18,7 @@ texture = ExtResource("4_o5dor")
 script = ExtResource("1_a1vif")
 textDescription = "Dies ist eine Bestellung und es folgt ein ganz langer Text um festzustellen ob der Text auf die Textur passt"
 textures = Array[Texture2D]([ExtResource("2_unabi"), ExtResource("3_rlswk"), ExtResource("4_o5dor")])
-textFieldPos = [Vector2(80, 155), Vector2(80, 155), Vector2(110, 155)]
+textFieldPos = Array[Vector2]([Vector2(80, 155), Vector2(80, 155), Vector2(110, 155)])
 textFieldSize = Array[Vector2]([Vector2(265, 65), Vector2(265, 65), Vector2(230, 65)])
 
 [node name="Label" type="Label" parent="."]
