@@ -1,16 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://c03f4e3i006pp"]
+[gd_scene load_steps=6 format=3 uid="uid://c03f4e3i006pp"]
 
 [ext_resource type="Script" uid="uid://dckixa4yd5csh" path="res://entities/flask/flask.gd" id="1_ubm4n"]
 [ext_resource type="Texture2D" uid="uid://bephr0yqnx4o1" path="res://textures/flask.png" id="2_3wnpu"]
 [ext_resource type="PackedScene" uid="uid://mr0nop6jx4b2" path="res://entities/flask/particles.tscn" id="3_wa4fi"]
 
-[node name="Flask" type="TextureRect" node_paths=PackedStringArray("particles")]
+[sub_resource type="Gradient" id="Gradient_wa4fi"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e13nc"]
+gradient = SubResource("Gradient_wa4fi")
+
+[node name="Flask" type="TextureRect"]
 clip_children = 1
 texture = ExtResource("2_3wnpu")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("1_ubm4n")
-particles = NodePath("Particles")
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.5647059)
+position = Vector2(560.5, 326.50003)
+scale = Vector2(21.328127, 12.359376)
+texture = SubResource("GradientTexture2D_e13nc")
 
 [node name="Particles" parent="." instance=ExtResource("3_wa4fi")]
 layout_mode = 1
@@ -21,12 +34,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-flask_corners = 61
-
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="mouse_entered" from="." to="." method="_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_mouse_exited"]
