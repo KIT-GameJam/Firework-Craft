@@ -1,17 +1,13 @@
 extends Control
 class_name Request
 
-@export var shapeTollerance: int = 1
-@export var colorTollerance: int = 1
-@export var sizeTollerance: int = 1
-
 @export var textDescription: String
 
 @export var textures: Array[Texture2D]
 @export var textFieldPos: Array[Vector2]
 @export var textFieldSize: Array[Vector2]
 
-var expected_product: RequestResource
+var expected_product: RequestResource = RequestResource.new()
 var origin: Vector2
 
 var currentTexture: Texture2D
@@ -34,13 +30,6 @@ func _ready() -> void:
 # farben mischen wird in der mitte geschaut
 # farb tolleranz auf distanz im array zum farbwert
 
-func is_as_requested(final_product: FireworkResource) -> bool:
-	var shapeDiff: int = abs(final_product.corner_modifier - expected_product.corners)
-	var colorDiff: int = abs((final_product.color_modifier - expected_product.color) % 12) # TODO Funktion überprüfen
-	var sizeDiff: int = abs(final_product.size_modifier - expected_product.size)
-	
-	return shapeDiff <= shapeTollerance && colorDiff <= colorTollerance && sizeDiff <= sizeTollerance
-
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
@@ -48,10 +37,12 @@ func _gui_input(event: InputEvent) -> void:
 				origin = global_position
 			diff = global_position - get_viewport().get_mouse_position()
 			active = true
-			Global.selectedReq = self
+			Global.selectedRequest = self
+			Global.selected = true
 		else:
 			global_position = origin
 			active = false
+			Global.selected = false
 
 	elif event is InputEventMouseMotion and active:
 		global_position = get_viewport().get_mouse_position() + diff

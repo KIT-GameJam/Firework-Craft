@@ -14,6 +14,9 @@ var flask_size := 0 # default: small
 var flask_corners := 0 # default: circle
 var ingredients_in_me := false
 var MAX_COLOR = Global.colors.size()
+var requestHover: bool = false
+
+var final_product: FireworkResource
 
 func _gui_input(event):
 	if event is InputEventMouse:
@@ -22,17 +25,35 @@ func _gui_input(event):
 			ingredients_in_me = false
 			Global.selected = false
 			Global.selected_res.queue_free()
+		if event.is_released() and requestHover:
+			var total_diff: int = is_as_requested(Global.selectedRequest.expected_product) # TODO Hier ist die final diff
+			print(total_diff)
+			requestHover = false;
+			Global.selectedRequest.queue_free()
 
 func _mouse_entered() -> void:
 	ingredients_in_me = Global.selected and not Global.selected_res == null
 	if not ingredients_in_me:
 		Global.selected_res = null
+		
+	requestHover = Global.selected and not Global.selectedRequest == null
+	if not requestHover:
+		Global.selectedRequest = null
 	
 func _mouse_exited() -> void:
 	ingredients_in_me = false
+	requestHover = false
 
 func calc_values() -> void:
 	current_value = current_value + flask_color + flask_size + flask_corners
+	
+func is_as_requested(expected_product: RequestResource) -> int:
+	# var shapeDiff: int = abs(final_product.corner_modifier - expected_product.corners)
+	# var colorDiff: int = abs((final_product.color_modifier - expected_product.color) % 12) # TODO Funktion überprüfen
+	# var sizeDiff: int = abs(final_product.size_modifier - expected_product.size)
+	
+	# return shapeDiff + colorDiff + sizeDiff
+	return 0
 
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData

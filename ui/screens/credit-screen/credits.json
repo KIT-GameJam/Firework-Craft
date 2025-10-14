@@ -14,5 +14,11 @@
 	{
 		"name": "Sample Asset",
 		"descriptor": "Sample description (optional)"
-	}
+	},
+	{
+		"name": "Godot Game Template",
+		"descriptor": "Universal game template targeted at game jams.",
+		"license_file": "res://other/fonts/AmeliesZettelwirtschaft.txt",
+		"url": "https://fontesk.com/amelies-zettelwirtschaft-ah-font/"
+	},
 ]
