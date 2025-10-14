@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyfvcuxi210mg"]
+[gd_scene load_steps=7 format=3 uid="uid://cyfvcuxi210mg"]
 
 [ext_resource type="Script" uid="uid://23td8m5q5kxt" path="res://levels/main_level.gd" id="1_ilwad"]
 [ext_resource type="Texture2D" uid="uid://bugrq8paq2d7t" path="res://textures/Keycap.svg" id="2_55n5f"]
+[ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/counter.png" id="2_yb8kn"]
 [ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
 [ext_resource type="PackedScene" uid="uid://c03f4e3i006pp" path="res://entities/flask/flask.tscn" id="4_55n5f"]
-[ext_resource type="PackedScene" uid="uid://mr0nop6jx4b2" path="res://entities/flask/particles.tscn" id="5_wg11f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yb8kn"]
 
 [node name="MainLevel" type="Control"]
 layout_mode = 3
@@ -16,6 +18,16 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ilwad")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yb8kn")
+expand_mode = 1
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -51,38 +63,38 @@ size_flags_vertical = 3
 [node name="IngredientTable" type="GridContainer" parent="VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
 
-[node name="AbstractResourceObject6" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
+[node name="AbstractResourceObject11" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
+layout_mode = 2
+
+[node name="AbstractResourceObject12" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
+layout_mode = 2
+
+[node name="AbstractResourceObject13" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
 
 [node name="AbstractResourceObject" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-expand_mode = 1
 
 [node name="AbstractResourceObject2" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-expand_mode = 1
 
 [node name="AbstractResourceObject3" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-expand_mode = 1
 
 [node name="AbstractResourceObject4" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-expand_mode = 1
 
-[node name="Flask" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("particles") instance=ExtResource("4_55n5f")]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 164
+theme_override_styles/separator = SubResource("StyleBoxEmpty_yb8kn")
+
+[node name="Flask" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("4_55n5f")]
 clip_children = 2
 layout_mode = 2
-particles = NodePath("Particles")
-
-[node name="Particles" parent="VBoxContainer/HBoxContainer2/Flask" instance=ExtResource("5_wg11f")]
-layout_mode = 0
-offset_left = 266.0
-offset_top = 287.0
-offset_right = 266.0
-offset_bottom = 287.0
 
 [connection signal="timeout" from="Timer" to="." method="_day_over"]
