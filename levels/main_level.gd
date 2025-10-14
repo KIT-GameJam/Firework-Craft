@@ -18,7 +18,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	%TimerLabel.text = str(snapped(%Timer.time_left,1))
 
-
 func _day_over() -> void:
 	day_over.emit()
 	queue_free()
