@@ -1,4 +1,5 @@
 extends Control
+class_name Request
 
 @export var shapeTollerance: int = 1
 @export var colorTollerance: int = 1
@@ -47,6 +48,7 @@ func _gui_input(event: InputEvent) -> void:
 				origin = global_position
 			diff = global_position - get_viewport().get_mouse_position()
 			active = true
+			Global.selectedReq = self
 		else:
 			global_position = origin
 			active = false
