@@ -25,4 +25,4 @@ func set_flask_corners(num_corners: int):
 
 func set_flask_color(color: Color):
 	particles.color = color
-	form.set_color(color)
+	form.set_shader_color(color)

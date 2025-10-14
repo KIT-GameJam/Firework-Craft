@@ -4,9 +4,6 @@ extends Polygon2D
 var radius := base_radius
 var segments := 3
 
-func _ready() -> void:
-	modulate = Color.BLUE
-
 func set_size(size: int):
 	radius = base_radius + size * 10
 	_redraw()
@@ -14,6 +11,10 @@ func set_size(size: int):
 func set_corners(corners: int):
 	segments = 3 + corners
 	_redraw()
+
+func set_shader_color(new_color: Color):
+	var mat: ShaderMaterial = material
+	mat.set_shader_parameter("color_modulate", Vector3(new_color.r, new_color.g, new_color.b))
 
 func _redraw():
 	var points = []

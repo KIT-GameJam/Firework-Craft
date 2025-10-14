@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://mr0nop6jx4b2"]
+[gd_scene load_steps=16 format=3 uid="uid://mr0nop6jx4b2"]
 
 [ext_resource type="Script" uid="uid://oa115hpil50" path="res://entities/flask/particles.gd" id="1_85akk"]
 [ext_resource type="Shader" uid="uid://cxyah2srfigsa" path="res://other/water.gdshader" id="3_8ko70"]
@@ -9,13 +9,11 @@
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8my8b"]
 gradient = SubResource("Gradient_8ko70")
 
-[sub_resource type="Gradient" id="Gradient_8my8b"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_hpbrh"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8ko70"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_21dc6"]
-noise = SubResource("FastNoiseLite_hpbrh")
-color_ramp = SubResource("Gradient_8my8b")
+noise = SubResource("FastNoiseLite_8ko70")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hpbrh"]
 shader = ExtResource("3_8ko70")
@@ -23,6 +21,7 @@ shader_parameter/noise_tex = SubResource("NoiseTexture2D_21dc6")
 shader_parameter/noise_tex_size = Vector2(256, 256)
 shader_parameter/color_ramp = SubResource("GradientTexture2D_8my8b")
 shader_parameter/color_amount = 5
+shader_parameter/color_modulate = Vector3(1, 1, 1)
 shader_parameter/wave_speed = 5.0
 shader_parameter/frequency_x = 10.0
 shader_parameter/frequency_y = 10.0
@@ -30,7 +29,8 @@ shader_parameter/amplitude_x = 0.02
 shader_parameter/amplitude_y = 0.02
 shader_parameter/pixel_amount = 128.0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1koxp"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8my8b"]
+size = Vector2(512, 512)
 
 [sub_resource type="Gradient" id="Gradient_boyrj"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0.016666412, 1)
@@ -46,6 +46,7 @@ shader_parameter/noise_tex = SubResource("NoiseTexture2D_1mvet")
 shader_parameter/noise_tex_size = Vector2(256, 256)
 shader_parameter/color_ramp = SubResource("GradientTexture2D_pbxtq")
 shader_parameter/color_amount = 5
+shader_parameter/color_modulate = Vector3(1, 1, 1)
 shader_parameter/wave_speed = 1.0
 shader_parameter/frequency_x = 10.0
 shader_parameter/frequency_y = 10.0
@@ -61,10 +62,6 @@ noise = SubResource("FastNoiseLite_qwsad")
 [node name="Particles" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 565.0
-offset_top = 336.0
-offset_right = 565.0
-offset_bottom = 336.0
 script = ExtResource("1_85akk")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -82,7 +79,9 @@ scale_amount_max = 12.0
 
 [node name="Form" type="Polygon2D" parent="."]
 material = SubResource("ShaderMaterial_hpbrh")
-texture = SubResource("NoiseTexture2D_1koxp")
+position = Vector2(0, -2)
+color = Color(0.060000002, 0.40466678, 1, 1)
+texture = SubResource("PlaceholderTexture2D_8my8b")
 script = ExtResource("5_hpbrh")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
