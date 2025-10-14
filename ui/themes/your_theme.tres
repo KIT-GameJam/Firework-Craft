@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://hheneshfv1b2"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://hheneshfv1b2"]
 
+[ext_resource type="FontFile" uid="uid://cvr2f1gjt71bc" path="res://other/fonts/Amelies.ttf" id="1_ge066"]
 [ext_resource type="Texture2D" uid="uid://b23e4kqj4o6dv" path="res://textures/Revert.svg" id="1_r1020"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4dl"]
@@ -14,7 +15,9 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [resource]
+default_font = ExtResource("1_ge066")
 HeaderLarge/font_sizes/font_size = 56
+HeaderLarge/fonts/font = ExtResource("1_ge066")
 HeaderMedium/font_sizes/font_size = 24
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
