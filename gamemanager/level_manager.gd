@@ -18,7 +18,7 @@ func _make_level(nr: int) -> void:
 	level.day_over.connect(_show_stats)
 	add_child(level)
 
-func _show_stats() -> void :
+func _show_stats(v: Level.CustomerStats) -> void :
 	var curr_stats = stats_scene.instantiate()
 	curr_stats.select_level_1.connect(_next_level)
 	add_child(curr_stats)
