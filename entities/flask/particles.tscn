@@ -1,29 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://mr0nop6jx4b2"]
+[gd_scene load_steps=6 format=3 uid="uid://mr0nop6jx4b2"]
 
 [ext_resource type="Script" uid="uid://oa115hpil50" path="res://entities/flask/particles.gd" id="1_85akk"]
-[ext_resource type="Script" uid="uid://dgxkxyp7vn2dk" path="res://entities/flask/particles_multi_mesh.gd" id="2_ycvrc"]
 [ext_resource type="Shader" uid="uid://cxyah2srfigsa" path="res://other/water.gdshader" id="3_8ko70"]
+[ext_resource type="Texture2D" uid="uid://dfy4uv5nqbavr" path="res://textures/noise.png" id="4_8my8b"]
+[ext_resource type="Script" uid="uid://g8ko5kmvc57j" path="res://entities/flask/circle.gd" id="5_hpbrh"]
 
-[sub_resource type="MultiMesh" id="MultiMesh_85akk"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8my8b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpbrh"]
 shader = ExtResource("3_8ko70")
+shader_parameter/noise_tex = ExtResource("4_8my8b")
 shader_parameter/noise_tex_size = Vector2(256, 256)
+shader_parameter/color_ramp = ExtResource("4_8my8b")
 shader_parameter/color_amount = 5
-shader_parameter/wave_speed = 1.0
+shader_parameter/wave_speed = 5.0
 shader_parameter/frequency_x = 10.0
 shader_parameter/frequency_y = 10.0
 shader_parameter/amplitude_x = 0.02
 shader_parameter/amplitude_y = 0.02
-shader_parameter/pixel_amount = 64.0
+shader_parameter/pixel_amount = 128.0
 
-[sub_resource type="SphereMesh" id="SphereMesh_dfeej"]
-material = SubResource("ShaderMaterial_8my8b")
-
-[sub_resource type="BoxMesh" id="BoxMesh_hliqq"]
-
-[node name="Particles" type="Node2D"]
+[node name="Particles" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_85akk")
+color = Color(0.67505324, 0.014224995, 0.32164615, 1)
+size = 2
+corners = 64
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 100
@@ -38,58 +39,7 @@ initial_velocity_max = 100.0
 scale_amount_min = 8.0
 scale_amount_max = 12.0
 
-[node name="MultiMesh" type="MultiMeshInstance2D" parent="."]
-scale = Vector2(200, 200)
-multimesh = SubResource("MultiMesh_85akk")
-script = ExtResource("2_ycvrc")
-
-[node name="Sphere" type="MeshInstance2D" parent="MultiMesh"]
-mesh = SubResource("SphereMesh_dfeej")
-
-[node name="Corner1" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(0, -0.44)
-rotation = 0.7853982
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
-
-[node name="Corner2" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(0.32, -0.32)
-rotation = 1.5707964
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
-
-[node name="Corner3" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(0.44000003, -2.1457673e-08)
-rotation = 2.3561945
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
-
-[node name="Corner4" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(0.32, 0.32)
-rotation = 1.5707964
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
-
-[node name="Corner5" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(0, 0.44000003)
-rotation = 2.3561945
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
-
-[node name="Corner6" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(-0.3199999, 0.32000014)
-rotation = 1.5707964
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
-
-[node name="Corner7" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(-0.44, 2.9802322e-08)
-rotation = 2.3561945
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
-
-[node name="Corner8" type="MeshInstance2D" parent="MultiMesh"]
-position = Vector2(-0.32000002, -0.32000008)
-rotation = 1.5707964
-scale = Vector2(0.29000002, 0.29000002)
-mesh = SubResource("BoxMesh_hliqq")
+[node name="Form" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_hpbrh")
+texture = ExtResource("4_8my8b")
+script = ExtResource("5_hpbrh")

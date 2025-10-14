@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://23td8m5q5kxt" path="res://levels/main_level.gd" id="1_ilwad"]
 [ext_resource type="Texture2D" uid="uid://bugrq8paq2d7t" path="res://textures/Keycap.svg" id="2_55n5f"]
-[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
+[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/ingredients/banana_ingredient.tscn" id="3_wg11f"]
 [ext_resource type="PackedScene" uid="uid://c03f4e3i006pp" path="res://entities/flask/flask.tscn" id="4_55n5f"]
 [ext_resource type="PackedScene" uid="uid://mr0nop6jx4b2" path="res://entities/flask/particles.tscn" id="5_wg11f"]
 
@@ -74,7 +74,11 @@ clip_children = 2
 layout_mode = 2
 
 [node name="Particles" parent="VBoxContainer/HBoxContainer2/Flask" instance=ExtResource("5_wg11f")]
-position = Vector2(266, 287)
+layout_mode = 0
+offset_left = 266.0
+offset_top = 287.0
+offset_right = 266.0
+offset_bottom = 287.0
 color = Color(0.0333333, 0, 1, 1)
 size = 6
 corners = 8

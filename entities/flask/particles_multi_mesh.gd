@@ -1,6 +1,6 @@
 extends MultiMeshInstance2D
 
-@onready var sphere_mesh: MeshInstance2D = $Sphere
+@onready var sphere_mesh: Polygon2D = $Circle
 @onready var corner_meshes: Array[MeshInstance2D] = [
 	$Corner1,$Corner2,$Corner3,$Corner4,$Corner5,$Corner6,$Corner7,$Corner8
 ]
