@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf7pp0uc3xhg4"]
+
+[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/Ingredients/abstractIngredient.tscn" id="1_lno2m"]
+[ext_resource type="Texture2D" uid="uid://dtw04c2fo32aj" path="res://textures/ingredients/ducky.png" id="2_7x646"]
+
+[node name="AbstractResourceObject" instance=ExtResource("1_lno2m")]
+texture = ExtResource("2_7x646")
