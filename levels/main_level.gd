@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 
 func _day_over() -> void:
 	day_over.emit()
+	queue_free()
 
 class CustomerStats:
 	var satisfaction: float
