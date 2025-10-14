@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 const shapeTollerance: int = 1
 const colorTollerance: int = 1
