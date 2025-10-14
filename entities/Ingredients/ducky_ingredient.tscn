@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf7pp0uc3xhg4"]
+[gd_scene load_steps=5 format=3 uid="uid://7vwmnpeyubxc"]
 
-[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/Ingredients/abstractIngredient.tscn" id="1_lno2m"]
+[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/ingredients/abstractIngredient.tscn" id="1_lno2m"]
 [ext_resource type="Texture2D" uid="uid://dtw04c2fo32aj" path="res://textures/ingredients/ducky.png" id="2_7x646"]
+[ext_resource type="Script" uid="uid://dfnp38cb0upof" path="res://entities/ingredients/fireworkResource.gd" id="3_wtypy"]
 
-[node name="AbstractResourceObject" instance=ExtResource("1_lno2m")]
+[sub_resource type="Resource" id="Resource_d0emo"]
+script = ExtResource("3_wtypy")
+size_modifier = -2
+corner_modifier = 3
+metadata/_custom_type_script = "uid://dfnp38cb0upof"
+
+[node name="Duck" instance=ExtResource("1_lno2m")]
 texture = ExtResource("2_7x646")
+resourceData = SubResource("Resource_d0emo")

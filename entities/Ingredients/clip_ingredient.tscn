@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://0hrn73cx62cs"]
+[gd_scene load_steps=5 format=3 uid="uid://dfgy1oledarig"]
 
-[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/Ingredients/abstractIngredient.tscn" id="1_3anh6"]
+[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/ingredients/abstractIngredient.tscn" id="1_3anh6"]
 [ext_resource type="Texture2D" uid="uid://c6gnt3dgd5gpi" path="res://textures/ingredients/clip.png" id="2_qbdg3"]
-[ext_resource type="Script" path="res://entities/Ingredients/fireworkResource.gd" id="3_ctuew"]
+[ext_resource type="Script" uid="uid://dfnp38cb0upof" path="res://entities/ingredients/fireworkResource.gd" id="3_f6lto"]
 
-[sub_resource type="Resource" id="Resource_nkdrj"]
-script = ExtResource("3_ctuew")
+[sub_resource type="Resource" id="Resource_r5n2i"]
+script = ExtResource("3_f6lto")
+color_modifier = 2
+corner_modifier = -2
 metadata/_custom_type_script = "uid://dfnp38cb0upof"
 
-[node name="AbstractResourceObject" instance=ExtResource("1_3anh6")]
+[node name="Clip" instance=ExtResource("1_3anh6")]
 texture = ExtResource("2_qbdg3")
-resourceData = SubResource("Resource_nkdrj")
+resourceData = SubResource("Resource_r5n2i")

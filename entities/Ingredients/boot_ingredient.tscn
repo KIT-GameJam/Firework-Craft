@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://chy3b0lrltp2s"]
+[gd_scene load_steps=5 format=3 uid="uid://c3b0ii5sxk6bg"]
 
-[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/Ingredients/abstractIngredient.tscn" id="1_bw82m"]
+[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/ingredients/abstractIngredient.tscn" id="1_bw82m"]
 [ext_resource type="Texture2D" uid="uid://51ptgidxc458" path="res://textures/ingredients/boot.png" id="2_ojo0o"]
+[ext_resource type="Script" uid="uid://dfnp38cb0upof" path="res://entities/ingredients/fireworkResource.gd" id="3_1u2dl"]
 
-[node name="AbstractResourceObject" instance=ExtResource("1_bw82m")]
+[sub_resource type="Resource" id="Resource_mm13r"]
+script = ExtResource("3_1u2dl")
+size_modifier = 3
+color_modifier = -2
+corner_modifier = -1
+metadata/_custom_type_script = "uid://dfnp38cb0upof"
+
+[node name="Boot" instance=ExtResource("1_bw82m")]
 texture = ExtResource("2_ojo0o")
+resourceData = SubResource("Resource_mm13r")
