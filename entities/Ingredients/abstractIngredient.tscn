@@ -1,11 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://d5ph0vlkp1tu"]
 
-[ext_resource type="Texture2D" uid="uid://ctem8rfvq44vw" path="res://textures/placeholder.png" id="1_21ln5"]
+[ext_resource type="Script" uid="uid://dng7n4had58ry" path="res://entities/Ingredients/abstractIngredient.gd" id="1_8uneu"]
 
-[node name="AbstractResourceObject" type="Node2D"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
+[node name="AbstractResourceObject" type="TextureRect"]
 offset_right = 261.0
 offset_bottom = 261.0
-texture = ExtResource("1_21ln5")
+script = ExtResource("1_8uneu")
+
+[connection signal="mouse_entered" from="." to="." method="mouse_entered"]

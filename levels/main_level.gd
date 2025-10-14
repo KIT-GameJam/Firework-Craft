@@ -12,7 +12,12 @@ var customerdata: Array[CustomerStats] = []
 
 func _ready() -> void:
 	print("Start Level")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	%Timer.start(daylength)
+
+func _input(event:InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		print("click")
 
 func _process(_delta: float) -> void:
 	%TimerLabel.text = str(snapped(%Timer.time_left,0.01))

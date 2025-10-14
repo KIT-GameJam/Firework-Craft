@@ -18,3 +18,6 @@ func _get_drag_data(_pos: Vector2) -> FireworkResource:
 	# Return resource as drag data
 	return resourceData;
 	
+func mouse_entered() -> void:
+	print("grab")
+	

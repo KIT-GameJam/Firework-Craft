@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyfvcuxi210mg"]
 
-[ext_resource type="Script" path="res://levels/main_level.gd" id="1_ilwad"]
-[ext_resource type="Texture2D" uid="uid://dkgp7tccxyyxc" path="res://icon.svg" id="2_0vhbo"]
+[ext_resource type="Script" uid="uid://23td8m5q5kxt" path="res://levels/main_level.gd" id="1_ilwad"]
 [ext_resource type="Texture2D" uid="uid://bugrq8paq2d7t" path="res://textures/Keycap.svg" id="2_55n5f"]
+[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
 [ext_resource type="PackedScene" uid="uid://c03f4e3i006pp" path="res://entities/flask/flask.tscn" id="4_55n5f"]
 [ext_resource type="PackedScene" uid="uid://mr0nop6jx4b2" path="res://entities/flask/particles.tscn" id="5_wg11f"]
 
@@ -54,30 +54,20 @@ layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 
-[node name="ColorRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/IngredientTable"]
+[node name="AbstractResourceObject6" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_0vhbo")
 
-[node name="ColorRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2/IngredientTable"]
+[node name="AbstractResourceObject" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_0vhbo")
 
-[node name="ColorRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer2/IngredientTable"]
+[node name="AbstractResourceObject2" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_0vhbo")
 
-[node name="ColorRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer2/IngredientTable"]
+[node name="AbstractResourceObject3" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_0vhbo")
 
-[node name="ColorRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer2/IngredientTable"]
+[node name="AbstractResourceObject4" parent="VBoxContainer/HBoxContainer2/IngredientTable" instance=ExtResource("3_wg11f")]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_0vhbo")
 
 [node name="Flask" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("4_55n5f")]
 clip_children = 2
