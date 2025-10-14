@@ -4,16 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bephr0yqnx4o1" path="res://textures/flask.png" id="2_3wnpu"]
 [ext_resource type="PackedScene" uid="uid://mr0nop6jx4b2" path="res://entities/flask/particles.tscn" id="3_wa4fi"]
 
-[node name="Flask" type="TextureRect"]
+[node name="Flask" type="TextureRect" node_paths=PackedStringArray("particles")]
 clip_children = 1
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 20.0
 texture = ExtResource("2_3wnpu")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("1_ubm4n")
+particles = NodePath("Particles")
 
 [node name="Particles" parent="." instance=ExtResource("3_wa4fi")]
 layout_mode = 1
@@ -24,6 +21,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+flask_corners = 61
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="mouse_entered" from="." to="." method="_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_mouse_exited"]

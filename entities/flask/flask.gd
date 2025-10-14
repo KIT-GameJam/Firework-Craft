@@ -14,31 +14,36 @@ var flask_corners := 0 # default: circle
 var ingredients_in_me := false
 
 func _gui_input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if not event.is_released() and ingredients_in_me and not Global.selected_res == null:
+	if event is InputEventMouse:
+		print("input event")
+		print(event.is_released())
+		print(ingredients_in_me)
+		if event.is_released() and ingredients_in_me:
+			print(3)
 			mix_res(Global.selected_res)
+			print("consumed")
+			ingredients_in_me = false;
 			Global.selected_res.queue_free()
 
 func _mouse_entered() -> void:
+	print("entered")
+	print(Global.selected_res)
 	ingredients_in_me = Global.selected_res != null
 	
 func _mouse_exited() -> void:
+	print("exited")
 	ingredients_in_me = false
 
 func calc_values() -> void:
 	current_value = current_value + flask_color + flask_size + flask_corners
 
-# to see if it is valid to drop there
-func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	if data is FireworkResource:
-		return true
-	return false
-
 func mix_res(res_abstr: AbstractIngredient) -> void:
+	print(res_abstr)
 	var res = res_abstr.resourceData
 	flask_color += res.color_modifier
 	flask_size = clampi(flask_size + res.size_modifier, 0, MAX_SIZE)
 	flask_corners = clampi(flask_corners + res.corner_modifier, 0, MAX_CORNERS)
+	_update_particle_effect()
 
 func _update_particle_effect():
 	if is_instance_valid(particles):
