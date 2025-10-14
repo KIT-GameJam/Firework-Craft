@@ -1,8 +1,7 @@
-extends Control
+extends TextureRect
 class_name AbstractIngredient
 
 @export var resourceData: FireworkResource
-@export var texture: Texture2D
 
 func _get_drag_data(_pos: Vector2) -> FireworkResource:
 	# Use another resource as drag preview.

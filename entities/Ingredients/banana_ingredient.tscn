@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhnbko3x404ly"]
 
 [ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/ingredients/abstractIngredient.tscn" id="1_3kl3t"]
-[ext_resource type="Texture2D" uid="uid://dkgp7tccxyyxc" path="res://icon.svg" id="2_5legj"]
+[ext_resource type="Texture2D" uid="uid://ujbeg51ilnry" path="res://textures/ingredients/banana.png" id="2_5legj"]
 
 [node name="AbstractResourceObject" instance=ExtResource("1_3kl3t")]
-texture = ExtResource("2_5legj")
+offset_right = 500.0
+offset_bottom = 500.0
 texture = ExtResource("2_5legj")
