@@ -1,9 +1,6 @@
 class_name Flask 
 extends TextureRect
 
-const MAX_CORNERS = 12
-const MAX_SIZE = 10
-
 @onready var particles: FlaskParticles = $Particles
 @onready var bg := $Background
 
@@ -13,7 +10,6 @@ var flask_color := 1 # default: white
 var flask_size := 0 # default: small
 var flask_corners := 0 # default: circle
 var ingredients_in_me := false
-var MAX_COLOR = Global.colors.size()
 var requestHover: bool = false
 
 var final_product: FireworkResource
@@ -57,9 +53,9 @@ func is_as_requested(expected_product: RequestResource) -> int:
 
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData
-	flask_color += clampi(res.color_modifier, 1, MAX_COLOR)
-	flask_size = clampi(flask_size + res.size_modifier, 0, MAX_SIZE)
-	flask_corners = clampi(flask_corners + res.corner_modifier, 0, MAX_CORNERS)
+	flask_color = clampi(flask_color + res.color_modifier , 1, Global.MAX_COLOR)
+	flask_size = clampi(flask_size + res.size_modifier, 0, Global.MAX_SIZE)
+	flask_corners = clampi(flask_corners + res.corner_modifier, 0, Global.MAX_CORNERS)
 	_update_particle_effect()
 
 func _update_particle_effect():

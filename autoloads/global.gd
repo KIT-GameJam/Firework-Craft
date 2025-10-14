@@ -4,6 +4,9 @@ var game_manager : GameManager = null
 var selected_res : AbstractIngredient = null
 var selectedRequest: Request = null
 
+const MAX_CORNERS = 12
+const MAX_SIZE = 6
+const MAX_COLOR := 12
 const colors = {
 	1: Color('f4e601'), # yellow
 	2: Color('f9c30b'), # yellow_orange
@@ -18,6 +21,7 @@ const colors = {
 	11: Color('018e5a'), # green
 	12: Color('8dbb27') # olive
 }
+
 var selected : bool = false
 
 func set_game_manager(p_game_manager: GameManager):

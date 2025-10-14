@@ -12,5 +12,19 @@ corner_modifier = -2
 metadata/_custom_type_script = "uid://dfnp38cb0upof"
 
 [node name="Tire" instance=ExtResource("1_iq7tq")]
+custom_minimum_size = Vector2(0, 0)
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
 texture = ExtResource("2_j1k5h")
 resourceData = SubResource("Resource_jndd1")
