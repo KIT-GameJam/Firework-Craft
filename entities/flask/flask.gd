@@ -1,17 +1,19 @@
 class_name Flask 
 extends TextureRect
 
-@export var particles: FlaskParticles
-
 const MAX_CORNERS = 12
 const MAX_SIZE = 10
 
+@onready var particles: FlaskParticles = $Particles
+@onready var bg := $Background
+
 var current_value := 0
 var product_costs := 0
-var flask_color := 0 # default: white
+var flask_color := 1 # default: white
 var flask_size := 0 # default: small
 var flask_corners := 0 # default: circle
 var ingredients_in_me := false
+var MAX_COLOR = Global.colors.size()
 
 func _gui_input(event):
 	if event is InputEventMouse:
@@ -34,13 +36,13 @@ func calc_values() -> void:
 
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData
-	flask_color += res.color_modifier
+	flask_color += clampi(res.color_modifier, 1, MAX_COLOR)
 	flask_size = clampi(flask_size + res.size_modifier, 0, MAX_SIZE)
 	flask_corners = clampi(flask_corners + res.corner_modifier, 0, MAX_CORNERS)
 	_update_particle_effect()
 
 func _update_particle_effect():
 	if is_instance_valid(particles):
-		particles.set_flask_color(flask_color)
+		particles.set_flask_color(Global.colors[flask_color])
 		particles.set_flask_size(flask_size)
 		particles.set_flask_corners(flask_corners)
