@@ -47,7 +47,8 @@ func _ready() -> void:
 	
 func _start_game() -> void:
 	level = 0
-	_show_controls()
+	_show_main_level()
+	#_show_controls()
 
 #region Pausing
 
