@@ -15,30 +15,24 @@ var ingredients_in_me := false
 
 func _gui_input(event):
 	if event is InputEventMouse:
-		print("input event")
-		print(event.is_released())
-		print(ingredients_in_me)
 		if event.is_released() and ingredients_in_me:
-			print(3)
 			mix_res(Global.selected_res)
-			print("consumed")
-			ingredients_in_me = false;
+			ingredients_in_me = false
+			Global.selected = false
 			Global.selected_res.queue_free()
 
 func _mouse_entered() -> void:
-	print("entered")
-	print(Global.selected_res)
-	ingredients_in_me = Global.selected_res != null
+	ingredients_in_me = Global.selected and not Global.selected_res == null
+	if not ingredients_in_me:
+		Global.selected_res = null
 	
 func _mouse_exited() -> void:
-	print("exited")
 	ingredients_in_me = false
 
 func calc_values() -> void:
 	current_value = current_value + flask_color + flask_size + flask_corners
 
 func mix_res(res_abstr: AbstractIngredient) -> void:
-	print(res_abstr)
 	var res = res_abstr.resourceData
 	flask_color += res.color_modifier
 	flask_size = clampi(flask_size + res.size_modifier, 0, MAX_SIZE)
