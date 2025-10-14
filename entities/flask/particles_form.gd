@@ -4,6 +4,9 @@ extends Polygon2D
 var radius := base_radius
 var segments := 3
 
+func _ready() -> void:
+	modulate = Color.BLUE
+
 func set_size(size: int):
 	radius = base_radius + size * 10
 	_redraw()

@@ -13,10 +13,10 @@ func _ready() -> void:
 	set_flask_size(flask_size)
 	set_flask_corners(flask_corners)
 
-func set_flask_size(size: int):
-	var particle_scale = 10 + size * 2
-	form.set_size(size)
-	particles.lifetime = 2 + .2 * size
+func set_flask_size(new_size: int):
+	var particle_scale = 10 + new_size * 2
+	form.set_size(new_size)
+	particles.lifetime = 2 + .2 * new_size
 	particles.scale_amount_min = particle_scale - 2
 	particles.scale_amount_max = particle_scale + 2
 
