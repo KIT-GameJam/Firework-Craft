@@ -9,7 +9,7 @@ func set_size(size: int):
 	_redraw()
 
 func set_corners(corners: int):
-	segments = 3 + corners
+	segments = 2 + corners
 	_redraw()
 
 func set_shader_color(new_color: Color):

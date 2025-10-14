@@ -7,8 +7,8 @@ extends TextureRect
 var current_value := 0
 var product_costs := 0
 var flask_color := 1 # default: white
-var flask_size := 0 # default: small
-var flask_corners := 0 # default: circle
+var flask_size := 1 # default: small
+var flask_corners := 1 # default: circle
 var ingredients_in_me := false
 var requestHover: bool = false
 
@@ -54,8 +54,14 @@ func is_as_requested(expected_product: RequestResource) -> int:
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData
 	flask_color = clampi(flask_color + res.color_modifier , 1, Global.MAX_COLOR)
-	flask_size = clampi(flask_size + res.size_modifier, 0, Global.MAX_SIZE)
-	flask_corners = clampi(flask_corners + res.corner_modifier, 0, Global.MAX_CORNERS)
+	flask_size = clampi(flask_size + res.size_modifier, 1, Global.MAX_SIZE)
+	flask_corners = clampi(flask_corners + res.corner_modifier, 1, Global.MAX_CORNERS)
+	_update_particle_effect()
+
+func reset():
+	flask_color = 1
+	flask_size = 1
+	flask_corners = 1
 	_update_particle_effect()
 
 func _update_particle_effect():

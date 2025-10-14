@@ -37,6 +37,8 @@ size = Vector2(512, 512)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_85akk")
+flask_size = 1
+flask_corners = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 100
