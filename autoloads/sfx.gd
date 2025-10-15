@@ -6,6 +6,7 @@ const tracks := {
 	"small_splash": preload("res://other/SFX/SmallSplash.wav"),
 	"water_splash": preload("res://other/SFX/WaterSplash.wav"),
 	"win": preload("res://other/SFX/WinSound.wav"),
+	"loose": preload("res://other/SFX/LoosingSound.wav")
 }
 
 func play_sfx(track: String) -> void:

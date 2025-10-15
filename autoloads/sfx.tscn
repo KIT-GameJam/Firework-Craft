@@ -1,29 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv6c8eqmejewl"]
+[gd_scene load_steps=3 format=3 uid="uid://bv6c8eqmejewl"]
 
-[ext_resource type="AudioStream" uid="uid://43tjld486cun" path="res://other/SFX/BigSplash.wav" id="1_4khqw"]
 [ext_resource type="Script" uid="uid://b2ejlm452rxli" path="res://autoloads/sfx.gd" id="1_5iln5"]
-[ext_resource type="AudioStream" uid="uid://chts8fjbqq8be" path="res://other/SFX/SmallSplash.wav" id="2_5iln5"]
-[ext_resource type="AudioStream" uid="uid://chotcjcxf6vyb" path="res://other/SFX/WaterSplash.wav" id="3_px0qq"]
-[ext_resource type="AudioStream" uid="uid://b6p38p4ea3pu1" path="res://other/SFX/CompleteSound.wav" id="4_sgwk3"]
-[ext_resource type="AudioStream" uid="uid://cj8rmv1ufx5kv" path="res://other/SFX/WinSound.wav" id="5_3mb12"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_stp8y"]
 
 [node name="Sfx" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamPolyphonic_stp8y")
 script = ExtResource("1_5iln5")
-
-[node name="BigSplash" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_4khqw")
-
-[node name="SmallSplash" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_5iln5")
-
-[node name="WaterSplash" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_px0qq")
-
-[node name="Complete" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_sgwk3")
-
-[node name="Win" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_3mb12")
