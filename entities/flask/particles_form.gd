@@ -1,6 +1,6 @@
 extends Polygon2D
 
-@export var base_radius := 128.0
+@export var base_radius := 100.0
 var radius := base_radius
 var segments := 3
 

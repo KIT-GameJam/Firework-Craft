@@ -44,9 +44,9 @@ func calc_values() -> void:
 	current_value = current_value + flask_color + flask_size + flask_corners
 	
 func is_as_requested(expected_product: RequestResource) -> int:
-	var shapeDiff: int = max(0, abs(final_product.corner_modifier - expected_product.corners) - expected_product.cornersTollerance)
-	var colorDiff: int = max(0, abs((final_product.color_modifier - expected_product.color) % 12) - expected_product.colorTollerance) # TODO Funktion überprüfen
-	var sizeDiff: int = max(0, abs(final_product.size_modifier - expected_product.size) - expected_product.sizeTollerance)
+	var shapeDiff: int = max(0, abs(flask_corners - expected_product.corners) - expected_product.cornersTollerance)
+	var colorDiff: int = max(0, abs((flask_color - expected_product.color) % 12) - expected_product.colorTollerance) # TODO Funktion überprüfen
+	var sizeDiff: int = max(0, abs(flask_size - expected_product.size) - expected_product.sizeTollerance)
 	
 	return shapeDiff + colorDiff + sizeDiff
 

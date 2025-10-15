@@ -1,4 +1,4 @@
-extends Control
+extends TextureRect
 class_name Request
 
 @export var textDescription: String

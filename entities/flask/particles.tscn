@@ -59,4 +59,3 @@ position = Vector2(0, -2)
 color = Color(0.060000002, 0.40466678, 1, 1)
 texture = SubResource("PlaceholderTexture2D_8my8b")
 script = ExtResource("5_hpbrh")
-base_radius = 100.0
