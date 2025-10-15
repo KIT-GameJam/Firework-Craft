@@ -2,8 +2,8 @@ extends Resource
 class_name RequestResource
 
 const cornersTollerance: int = 0
-const colorTollerance: int = 1
-const sizeTollerance: int = 2
+const colorTollerance: int = 0
+const sizeTollerance: int = 0
 
 var size: int
 var color: int # 0-11 (12 Verschiedene Farben)

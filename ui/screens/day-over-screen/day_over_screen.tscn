@@ -58,6 +58,13 @@ custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme = ExtResource("1_nk6t1")
 
+[node name="AverageWaitTime" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_nk6t1")
+theme_type_variation = &"HeaderSmall"
+text = "Average wait time: "
+horizontal_alignment = 1
+
 [node name="BarTitle" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_nk6t1")
