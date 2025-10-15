@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://mr0nop6jx4b2"]
+[gd_scene load_steps=11 format=3 uid="uid://mr0nop6jx4b2"]
 
 [ext_resource type="Script" uid="uid://oa115hpil50" path="res://entities/flask/particles.gd" id="1_85akk"]
+[ext_resource type="Texture2D" uid="uid://qco5dcujter0" path="res://textures/star.png" id="2_8my8b"]
 [ext_resource type="Shader" uid="uid://cxyah2srfigsa" path="res://other/water.gdshader" id="3_8ko70"]
 [ext_resource type="Script" uid="uid://g8ko5kmvc57j" path="res://entities/flask/particles_form.gd" id="5_hpbrh"]
 
@@ -42,6 +43,7 @@ flask_corners = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 100
+texture = ExtResource("2_8my8b")
 lifetime = 6.0
 speed_scale = 3.0
 randomness = 1.0
@@ -50,8 +52,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 40.0
 initial_velocity_max = 100.0
-scale_amount_min = 8.0
-scale_amount_max = 12.0
+scale_amount_min = 0.8
+scale_amount_max = 1.2
 
 [node name="Form" type="Polygon2D" parent="."]
 material = SubResource("ShaderMaterial_hpbrh")
