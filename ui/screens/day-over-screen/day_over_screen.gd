@@ -3,7 +3,8 @@ extends Control
 var level_nr: int
 @onready var title : Label = $VBoxContainer/Title
 @onready var progress_bar : ProgressBar = $VBoxContainer/ProgressBar
-var total_satisfaction : int = 75 # TODO: set this
+@onready var stats_list : ItemList = $VBoxContainer/ItemList
+var total_satisfaction : int = 0
 var level_stats : Array[Level.CustomerStats] = []
 signal select_level_1
 
@@ -11,6 +12,7 @@ signal select_level_1
 func _ready() -> void:
 	title.text = "Day " + str(level_nr)
 	calc_total_satisfaction()
+	set_stats_list()
 	progress_bar.value = 0
 	var tween = create_tween()
 	tween.tween_property(progress_bar, "value", total_satisfaction, 2.0) # (Zielwert, Dauer)
@@ -20,6 +22,10 @@ func _ready() -> void:
 func set_stats(stats_arr: Array[Level.CustomerStats], curr_level: int):
 	level_stats = stats_arr
 	level_nr = curr_level
+
+func set_stats_list():
+	for x in range(level_stats.size()):
+		stats_list.add_item("Costumer " + str(x+1) + " with Satisfaction: " + str(level_stats.get(x).satisfaction) + ", Waittime: " +  str(level_stats.get(x).wait_time))
 
 func calc_total_satisfaction():
 	var curr_satisfaction = 0

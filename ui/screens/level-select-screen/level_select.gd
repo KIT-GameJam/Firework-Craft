@@ -23,7 +23,6 @@ func init_buttons(max_level: int, completed_level_information: Array[bool]) -> v
 		buttonContainer.add_child(b)
 
 func _level_button_pressed(level_nr: int) -> void:
-	print("Start Level ",level_nr)
 	start_level.emit(level_nr)
 	queue_free()
 	

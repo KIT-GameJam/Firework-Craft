@@ -17,7 +17,6 @@ var customerdata: Array[CustomerStats] = []
 var request_scene: PackedScene = load("res://entities/requests/request.tscn")
 
 func _ready() -> void:
-	print("Start Level")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	for i in range(9):
 		_add_ingredient()
@@ -34,7 +33,7 @@ func _add_request() -> void:
 		#request.tree_exited.connect(_request_complete)
 		$VBoxContainer/HBoxContainer/Requests.add_child.call_deferred(request)
 		get_tree().create_timer(max(daylength/requests_amount,0.5)).timeout.connect(_add_request)
-	else:
+	else: # costumers can not be satisfied at all, just leaves immediately
 		var stat = CustomerStats.new()
 		stat.satisfaction = 0
 		stat.wait_time = 100

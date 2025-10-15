@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://hheneshfv1b2"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://hheneshfv1b2"]
 
 [ext_resource type="FontFile" uid="uid://cvr2f1gjt71bc" path="res://other/fonts/Amelies.ttf" id="1_ge066"]
 [ext_resource type="Texture2D" uid="uid://b23e4kqj4o6dv" path="res://textures/Revert.svg" id="1_r1020"]
@@ -12,6 +12,9 @@ expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1soqu"]
+bg_color = Color(0.12796035, 0.0004690616, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4dl"]
 content_margin_left = 8.0
@@ -41,6 +44,9 @@ FlatButton/styles/normal = SubResource("StyleBoxFlat_prsbj")
 HeaderLarge/font_sizes/font_size = 56
 HeaderLarge/fonts/font = ExtResource("1_ge066")
 HeaderMedium/font_sizes/font_size = 35
+ItemList/constants/h_separation = 4
+ItemList/font_sizes/font_size = 30
+ItemList/styles/panel = SubResource("StyleBoxFlat_1soqu")
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8

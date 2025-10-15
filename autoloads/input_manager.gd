@@ -47,4 +47,4 @@ func _update_mouse_capture() -> void:
 
 func set_is_paused(b: bool) -> void:
 	_is_paused = b
-	_update_mouse_capture()
+	#_update_mouse_capture()
