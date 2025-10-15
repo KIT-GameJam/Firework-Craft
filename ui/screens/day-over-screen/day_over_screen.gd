@@ -28,14 +28,11 @@ func set_stats_list():
 		stats_list.add_item("Costumer " + str(x+1) + " with Satisfaction: " + str(level_stats.get(x).satisfaction) + ", Waittime: " +  str(level_stats.get(x).wait_time))
 
 func calc_total_satisfaction():
-	var curr_satisfaction = 0
-	for i in range(level_stats.size()):
-		curr_satisfaction = curr_satisfaction + level_stats.get(i).satisfaction
-	total_satisfaction = curr_satisfaction	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	var curr_satisfaction: int = 0
+	for stat in level_stats:
+		curr_satisfaction = curr_satisfaction + stat.satisfaction
+
+	total_satisfaction = (curr_satisfaction / float(level_stats.size()*10)) * 100
 	
 func _on_button_pressed() -> void:
 	select_level_1.emit()

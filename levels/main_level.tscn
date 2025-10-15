@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://v4ji6exn8ngp" path="res://entities/ingredients/pear_ingredient.tscn" id="8_5br84"]
 [ext_resource type="PackedScene" uid="uid://by3x2crtpc51a" path="res://entities/ingredients/tire_ingredient.tscn" id="8_t6wdf"]
 [ext_resource type="PackedScene" uid="uid://b6k0ge2uyxh01" path="res://entities/ingredients/pizza_ingredient.tscn" id="9_arlwx"]
-[ext_resource type="PackedScene" uid="uid://bjdur4wfp1wuv" path="res://entities/ingredients/can_ingredient.tscn" id="10_p6yen"]
-[ext_resource type="PackedScene" uid="uid://cxahalsyfykks" path="res://entities/ingredients/rocket_ingredient.tscn" id="11_v1ssk"]
+[ext_resource type="PackedScene" path="res://entities/ingredients/can_ingredient.tscn" id="10_p6yen"]
+[ext_resource type="PackedScene" path="res://entities/ingredients/rocket_ingredient.tscn" id="11_v1ssk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43k3a"]
 
