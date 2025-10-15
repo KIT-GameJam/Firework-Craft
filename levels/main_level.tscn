@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyfvcuxi210mg"]
+[gd_scene load_steps=16 format=3 uid="uid://cyfvcuxi210mg"]
 
 [ext_resource type="Script" uid="uid://23td8m5q5kxt" path="res://levels/main_level.gd" id="1_ilwad"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_yb8kn"]
 [ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/counter.png" id="2_yb8kn"]
-[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/Ingredients/banana_ingredient.tscn" id="3_wg11f"]
+[ext_resource type="PackedScene" uid="uid://bhnbko3x404ly" path="res://entities/ingredients/banana_ingredient.tscn" id="3_wg11f"]
 [ext_resource type="PackedScene" uid="uid://c03f4e3i006pp" path="res://entities/flask/flask.tscn" id="4_55n5f"]
-[ext_resource type="PackedScene" uid="uid://chy3b0lrltp2s" path="res://entities/ingredients/boot_ingredient.tscn" id="4_ggk2x"]
-[ext_resource type="PackedScene" uid="uid://0hrn73cx62cs" path="res://entities/ingredients/clip_ingredient.tscn" id="5_5br84"]
-[ext_resource type="PackedScene" uid="uid://cf7pp0uc3xhg4" path="res://entities/ingredients/ducky_ingredient.tscn" id="7_arlwx"]
-[ext_resource type="PackedScene" path="res://entities/ingredients/pear_ingredient.tscn" id="8_5br84"]
-[ext_resource type="PackedScene" uid="uid://by3x2crtpc51a" path="res://entities/Ingredients/tire_ingredient.tscn" id="8_t6wdf"]
-[ext_resource type="PackedScene" path="res://entities/ingredients/pizza_ingredient.tscn" id="9_arlwx"]
+[ext_resource type="PackedScene" uid="uid://c3b0ii5sxk6bg" path="res://entities/ingredients/boot_ingredient.tscn" id="4_ggk2x"]
+[ext_resource type="PackedScene" uid="uid://dfgy1oledarig" path="res://entities/ingredients/clip_ingredient.tscn" id="5_5br84"]
+[ext_resource type="PackedScene" uid="uid://7vwmnpeyubxc" path="res://entities/ingredients/ducky_ingredient.tscn" id="7_arlwx"]
+[ext_resource type="PackedScene" uid="uid://v4ji6exn8ngp" path="res://entities/ingredients/pear_ingredient.tscn" id="8_5br84"]
+[ext_resource type="PackedScene" uid="uid://by3x2crtpc51a" path="res://entities/ingredients/tire_ingredient.tscn" id="8_t6wdf"]
+[ext_resource type="PackedScene" uid="uid://b6k0ge2uyxh01" path="res://entities/ingredients/pizza_ingredient.tscn" id="9_arlwx"]
+[ext_resource type="PackedScene" uid="uid://bjdur4wfp1wuv" path="res://entities/ingredients/can_ingredient.tscn" id="10_p6yen"]
+[ext_resource type="PackedScene" uid="uid://cxahalsyfykks" path="res://entities/ingredients/rocket_ingredient.tscn" id="11_v1ssk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43k3a"]
 
@@ -29,7 +31,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_yb8kn")
 script = ExtResource("1_ilwad")
-ingredient_scenes = Array[PackedScene]([ExtResource("3_wg11f"), ExtResource("4_ggk2x"), ExtResource("5_5br84"), ExtResource("7_arlwx"), ExtResource("8_t6wdf"), ExtResource("8_5br84"), ExtResource("9_arlwx")])
+ingredient_scenes = Array[PackedScene]([ExtResource("3_wg11f"), ExtResource("4_ggk2x"), ExtResource("5_5br84"), ExtResource("7_arlwx"), ExtResource("8_t6wdf"), ExtResource("8_5br84"), ExtResource("9_arlwx"), ExtResource("10_p6yen"), ExtResource("11_v1ssk")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

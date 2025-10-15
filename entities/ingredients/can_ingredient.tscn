@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjdur4wfp1wuv"]
+
+[ext_resource type="PackedScene" uid="uid://d5ph0vlkp1tu" path="res://entities/ingredients/abstractIngredient.tscn" id="1_ymhfd"]
+[ext_resource type="Texture2D" uid="uid://cpaxiudiygix0" path="res://textures/ingredients/can.png" id="2_uivip"]
+[ext_resource type="Script" uid="uid://dfnp38cb0upof" path="res://entities/ingredients/fireworkResource.gd" id="3_6t4t4"]
+
+[sub_resource type="Resource" id="Resource_pc31v"]
+script = ExtResource("3_6t4t4")
+size_modifier = -3
+color_modifier = -3
+
+[node name="AbstractResourceObject" instance=ExtResource("1_ymhfd")]
+texture = ExtResource("2_uivip")
+resourceData = SubResource("Resource_pc31v")
