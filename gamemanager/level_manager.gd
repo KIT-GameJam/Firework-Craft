@@ -4,7 +4,7 @@ signal end
 
 var level_scene: PackedScene = load("res://levels/main_level.tscn")
 var stats_scene: PackedScene = load("res://ui/screens/day-over-screen/day_over_screen.tscn")
-var level_number = 0
+var level_number: int = 0
 
 func _ready() -> void:
 	_next_level()

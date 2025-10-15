@@ -29,12 +29,9 @@ func _ready() -> void:
 	particles.set_flask_size(r_size)
 	particles.set_flask_color(Global.colors[r_color])
 	particles.set_flask_corners(r_corners)
+	var start_time = Time.get_ticks_msec()
 	
-	expected_product = RequestResource.new(r_size, r_color, r_corners)
-	# currentTexture = textures[index]
-	# label.position = textFieldPos[index]
-	# label.size = textFieldSize[index]
-	
+	expected_product = RequestResource.new(r_size, r_color, r_corners, start_time)
 	
 
 # farbe array 

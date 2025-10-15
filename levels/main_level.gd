@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 func _add_request() -> void:
 	if $VBoxContainer/HBoxContainer/Requests.get_children().size() < 5:
 		var request: Request = request_scene.instantiate()
-		request.tree_exited.connect(_request_complete)
+		#request.tree_exited.connect(_request_complete)
 		$VBoxContainer/HBoxContainer/Requests.add_child.call_deferred(request)
 		get_tree().create_timer(max(daylength/requests_amount,0.5)).timeout.connect(_add_request)
 	else:
@@ -39,13 +39,6 @@ func _add_request() -> void:
 		stat.satisfaction = 0
 		stat.wait_time = 100
 		customerdata.append(stat)
-
-func _request_complete():
-	var stat = CustomerStats.new()
-	stat.satisfaction = 10
-	stat.wait_time = 0
-	customerdata.append(stat)
-	
 
 func _add_ingredient() -> void:
 	var ingredient: AbstractIngredient = ingredient_scenes.pick_random().instantiate()
@@ -59,3 +52,9 @@ func _day_over() -> void:
 class CustomerStats:
 	var satisfaction: int
 	var wait_time: float
+
+func _on_flask_request_complete(wait_time: int, satisfaction: int) -> void:
+	var stat = CustomerStats.new()
+	stat.wait_time = wait_time
+	stat.satisfaction = satisfaction
+	customerdata.append(stat)

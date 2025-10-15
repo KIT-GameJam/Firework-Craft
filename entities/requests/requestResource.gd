@@ -8,8 +8,10 @@ const sizeTollerance: int = 2
 var size: int
 var color: int # 0-11 (12 Verschiedene Farben)
 var corners: int
+var start_time: int
 
-func _init(r_size: int, r_color: int, r_corners: int) -> void:
+func _init(r_size: int, r_color: int, r_corners: int, r_start_time: int) -> void:
 	size = r_size
 	color = r_color
 	corners = r_corners
+	start_time = r_start_time

@@ -1,6 +1,8 @@
 class_name Flask 
 extends TextureRect
 
+signal request_complete(wait_time: int, satisfaction: int)
+
 @onready var particles: FlaskParticles = $Particles
 @onready var bg := $Background
 
@@ -12,8 +14,6 @@ var flask_corners := 1 # default: circle
 var ingredients_in_me := false
 var requestHover: bool = false
 
-var final_product: FireworkResource
-
 func _gui_input(event):
 	if event is InputEventMouse:
 		if event.is_released() and ingredients_in_me:
@@ -22,8 +22,7 @@ func _gui_input(event):
 			Global.selected = false
 			Global.selected_res.queue_free()
 		if event.is_released() and requestHover:
-			var total_diff: int = is_as_requested(Global.selectedRequest.expected_product) # TODO Hier ist die final diff
-			print(total_diff)
+			handle_abgabe(Global.selectedRequest.expected_product)
 			requestHover = false;
 			Global.selectedRequest.queue_free()
 
@@ -43,12 +42,16 @@ func _mouse_exited() -> void:
 func calc_values() -> void:
 	current_value = current_value + flask_color + flask_size + flask_corners
 	
-func is_as_requested(expected_product: RequestResource) -> int:
+func handle_abgabe(expected_product: RequestResource) -> void:
 	var shapeDiff: int = max(0, abs(flask_corners - expected_product.corners) - expected_product.cornersTollerance)
 	var colorDiff: int = max(0, abs((flask_color - expected_product.color) % 12) - expected_product.colorTollerance) # TODO Funktion überprüfen
 	var sizeDiff: int = max(0, abs(flask_size - expected_product.size) - expected_product.sizeTollerance)
+	var total_diff = shapeDiff + colorDiff + sizeDiff
 	
-	return shapeDiff + colorDiff + sizeDiff
+	var elapsed_time = roundi((Time.get_ticks_msec() - expected_product.start_time) / 1000.)
+	var satisfaction = max(elapsed_time, 10 - total_diff)
+	
+	request_complete.emit(0, satisfaction)
 
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData
