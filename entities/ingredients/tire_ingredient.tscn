@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_jndd1"]
 script = ExtResource("3_2kh2o")
-size_modifier = -2
+size_modifier = 2
 color_modifier = 1
 corner_modifier = -2
 metadata/_custom_type_script = "uid://dfnp38cb0upof"

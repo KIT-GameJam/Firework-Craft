@@ -6,6 +6,16 @@ var active: bool = false
 var dif: Vector2 = Vector2.ZERO
 var origin: Vector2
 
+#Stats: Size, Color, Corner
+#Banane 1, 1, 1
+#Boot -2, 0, -4
+#Clip 0, 1, 0
+#Ducky 2, 0, 1
+#Pear -1, 3, -1
+#Pizza 1, 0, 2
+#Tire 2, 1, -2
+
+
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
