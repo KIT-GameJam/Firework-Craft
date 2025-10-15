@@ -49,9 +49,9 @@ func handle_abgabe(expected_product: RequestResource) -> void:
 	var total_diff = shapeDiff + colorDiff + sizeDiff
 	
 	var elapsed_time = roundi((Time.get_ticks_msec() - expected_product.start_time) / 1000.)
-	var satisfaction = max(elapsed_time, 10 - total_diff)
+	var satisfaction = max(0, 10 - total_diff)
 	
-	request_complete.emit(0, satisfaction)
+	request_complete.emit(elapsed_time, satisfaction)
 
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData
