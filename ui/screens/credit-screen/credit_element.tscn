@@ -15,16 +15,25 @@ theme_override_constants/separation = 0
 alignment = 1
 script = ExtResource("1_ukcj5")
 
-[node name="CreditButton" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 3
+
+[node name="CreditButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2mwwd")
 flat = true
+
+[node name="LicenseButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "License"
+alignment = 0
 
 [node name="DescribtorLabel" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.670588)
 layout_mode = 2
 label_settings = SubResource("LabelSettings_p0wxk")
-horizontal_alignment = 1
 autowrap_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/LicenseButton" to="." method="_on_license_button_pressed"]

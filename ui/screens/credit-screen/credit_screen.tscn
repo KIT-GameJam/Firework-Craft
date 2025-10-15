@@ -6,11 +6,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_cutkl"]
 font_size = 22
 
-[sub_resource type="LabelSettings" id="LabelSettings_2puqi"]
-font_size = 12
-
 [sub_resource type="LabelSettings" id="LabelSettings_r8dx7"]
 font_size = 12
+
+[sub_resource type="SystemFont" id="SystemFont_5cd3b"]
 
 [node name="CreditScreen" type="MarginContainer"]
 anchors_preset = 15
@@ -51,24 +50,13 @@ layout_mode = 2
 
 [node name="LabelCreatedBy" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Created by You"
+text = "Created by Elias, E-Cathy, Jonathan, Jesko and Laura"
 label_settings = SubResource("LabelSettings_cutkl")
 horizontal_alignment = 1
 
 [node name="LabelSpecialThanks" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Special thanks to Also You"
-horizontal_alignment = 1
-
-[node name="Spacer" type="Control" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 27.17)
-layout_mode = 2
-
-[node name="LabelHoverHint" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
-modulate = Color(1, 1, 1, 0.368627)
-layout_mode = 2
-text = "Hover for License Information"
-label_settings = SubResource("LabelSettings_2puqi")
+text = "Special thanks to Florian"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -98,5 +86,34 @@ theme_override_font_sizes/font_size = 12
 text = "Show detailed Godot Credits"
 flat = true
 
+[node name="LicenseText" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LicenseText"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LicenseText/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "License"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LicenseText/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="LicenseText/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = SubResource("SystemFont_5cd3b")
+
+[node name="CloseLicense" type="Button" parent="LicenseText/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="DetailedGCredits" to="." method="_on_detailed_g_credits_pressed"]
+[connection signal="pressed" from="LicenseText/VBoxContainer/CloseLicense" to="." method="_on_close_licence_text_pressed"]
