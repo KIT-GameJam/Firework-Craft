@@ -4,7 +4,7 @@ var game_manager : GameManager = null
 var selected_res : AbstractIngredient = null
 var selectedRequest: Request = null
 
-const MAX_CORNERS : int = 12
+const MAX_CORNERS : int = 6
 const MAX_SIZE : int = 3
 const MAX_COLOR : int = 6
 const colors = {

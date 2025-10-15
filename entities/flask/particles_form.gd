@@ -1,11 +1,11 @@
 extends Polygon2D
 
-@export var base_radius := 100.0
+@export var base_radius := 20.0
 var radius := base_radius
 var segments := 3
 
 func set_size(size: int):
-	radius = base_radius + size * 10
+	radius = size * 48
 	_redraw()
 
 func set_corners(corners: int):
