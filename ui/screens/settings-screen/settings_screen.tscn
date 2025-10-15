@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ywybicp1ess8"]
+[gd_scene load_steps=5 format=3 uid="uid://ywybicp1ess8"]
 
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_i4lq1"]
 [ext_resource type="Script" uid="uid://roiysiotwsbq" path="res://ui/screens/settings-screen/settings_screen.gd" id="2_ck7g6"]
+[ext_resource type="Texture2D" uid="uid://dbbdvr7kcyalw" path="res://textures/table.png" id="3_i4lq1"]
 [ext_resource type="PackedScene" uid="uid://cv271fh4d2p13" path="res://ui/components/settings-menu/settings_menu.tscn" id="4_i4lq1"]
 
 [node name="OptionsMenu" type="MarginContainer"]
@@ -17,6 +18,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 script = ExtResource("2_ck7g6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.5678866, 0.5678866, 0.5678866, 1)
+layout_mode = 2
+texture = ExtResource("3_i4lq1")
+expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(450, 0)
