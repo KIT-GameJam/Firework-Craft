@@ -27,7 +27,7 @@ func _ready() -> void:
 	var r_corners = randi_range(1, Global.MAX_CORNERS)
 	
 	particles.set_flask_size(r_size)
-	particles.set_flask_color(Global.colors[r_color])
+	particles.set_flask_color(Global.colors[r_color % Global.MAX_COLOR])
 	particles.set_flask_corners(r_corners)
 	var start_time = Time.get_ticks_msec()
 	
