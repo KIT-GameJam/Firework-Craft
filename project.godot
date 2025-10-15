@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Crack the Formular"
+config/name="Crack the Formula"
 run/main_scene="res://gamemanager/gamemanager.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.19215687, 0.15294118, 0.11372549, 1)
@@ -22,6 +22,7 @@ InputManager="*res://autoloads/input_manager.gd"
 DebugGlobal="*res://autoloads/debug_global.gd"
 Global="*res://autoloads/global.gd"
 Settings="*res://autoloads/settings/settings.gd"
+Sfx="*res://autoloads/sfx.gd"
 
 [display]
 

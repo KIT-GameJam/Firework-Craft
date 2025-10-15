@@ -17,15 +17,19 @@ var requestHover: bool = false
 func _gui_input(event):
 	if event is InputEventMouse:
 		if event.is_released() and ingredients_in_me:
+			Sfx.play_sfx("water_splash")
 			mix_res(Global.selected_res)
 			ingredients_in_me = false
 			Global.ingredient_inhand = false
 			Global.selected_res.queue_free()
-		if event.is_released() and requestHover:
+		elif event.is_released() and requestHover:
+			Sfx.play_sfx("complete")
 			handle_abgabe(Global.selectedRequest.expected_product)
 			requestHover = false;
 			Global.request_inhand = false
 			Global.selectedRequest.queue_free()
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		Sfx.play_sfx("small_splash")
 
 func _mouse_entered() -> void:
 	ingredients_in_me = Global.ingredient_inhand and not Global.selected_res == null

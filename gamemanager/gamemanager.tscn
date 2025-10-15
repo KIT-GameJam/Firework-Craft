@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://lwsm0uaw6k66"]
+[gd_scene load_steps=9 format=3 uid="uid://lwsm0uaw6k66"]
 
 [ext_resource type="Script" uid="uid://cluu0cgltsenj" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
 [ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
@@ -7,11 +7,7 @@
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="3_8qpx4"]
 [ext_resource type="AudioStream" uid="uid://dreykwqxddty0" path="res://other/tracks/FireworkTheme.wav" id="4_gpq8w"]
 [ext_resource type="AudioStream" uid="uid://dvi5svfesam7s" path="res://other/tracks/FireworkMenuLoop.mp3" id="5_3c0xs"]
-[ext_resource type="AudioStream" uid="uid://43tjld486cun" path="res://other/SFX/BigSplash.wav" id="6_6tx2o"]
-[ext_resource type="AudioStream" uid="uid://chts8fjbqq8be" path="res://other/SFX/SmallSplash.wav" id="7_dssq8"]
-[ext_resource type="AudioStream" uid="uid://chotcjcxf6vyb" path="res://other/SFX/WaterSplash.wav" id="8_t6r7f"]
-[ext_resource type="AudioStream" uid="uid://b6p38p4ea3pu1" path="res://other/SFX/CompleteSound.wav" id="9_vt3a7"]
-[ext_resource type="AudioStream" uid="uid://cj8rmv1ufx5kv" path="res://other/SFX/WinSound.wav" id="10_uburm"]
+[ext_resource type="PackedScene" uid="uid://bv6c8eqmejewl" path="res://autoloads/sfx.tscn" id="6_y84hv"]
 
 [node name="Gamemanager" type="Node"]
 process_mode = 3
@@ -26,28 +22,13 @@ environment = ExtResource("2_v1n10")
 
 [node name="Theme" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("4_gpq8w")
-volume_db = -30.0
+volume_db = -10.0
 
 [node name="Menu" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("5_3c0xs")
-volume_db = -30.0
+volume_db = -10.0
 
-[node name="Sfx" type="Node" parent="Audio"]
-
-[node name="BigSplash" type="AudioStreamPlayer" parent="Audio/Sfx"]
-stream = ExtResource("6_6tx2o")
-
-[node name="SmallSplash" type="AudioStreamPlayer" parent="Audio/Sfx"]
-stream = ExtResource("7_dssq8")
-
-[node name="WaterSplash" type="AudioStreamPlayer" parent="Audio/Sfx"]
-stream = ExtResource("8_t6r7f")
-
-[node name="Complete" type="AudioStreamPlayer" parent="Audio/Sfx"]
-stream = ExtResource("9_vt3a7")
-
-[node name="Win" type="AudioStreamPlayer" parent="Audio/Sfx"]
-stream = ExtResource("10_uburm")
+[node name="Sfx" parent="Audio" instance=ExtResource("6_y84hv")]
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
