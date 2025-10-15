@@ -4,7 +4,7 @@ var level_nr: int
 @onready var title : Label = $VBoxContainer/Title
 @onready var progress_bar : ProgressBar = $VBoxContainer/ProgressBar
 @onready var stats_list : ItemList = $VBoxContainer/ItemList
-var total_satisfaction : int = 75 # TODO: set this
+var total_satisfaction : int = 0
 var level_stats : Array[Level.CustomerStats] = []
 signal select_level_1
 
@@ -26,8 +26,7 @@ func set_stats(stats_arr: Array[Level.CustomerStats], curr_level: int):
 func set_stats_list():
 	print(level_stats.size())
 	for x in range(level_stats.size()):
-		stats_list.add_item(level_stats.get(x).satisfaction)
-		stats_list.set_item_text(x, "Costumer " + str(x))
+		stats_list.add_item("Costumer " + str(x+1) + " with Satisfaction: " + str(level_stats.get(x).satisfaction) + ", Waittime: " +  str(level_stats.get(x).wait_time))
 
 func calc_total_satisfaction():
 	var curr_satisfaction = 0
