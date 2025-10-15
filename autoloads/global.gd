@@ -6,8 +6,9 @@ var selectedRequest: Request = null
 
 const MAX_CORNERS : int = 6
 const MAX_SIZE : int = 3
-const MAX_COLOR : int = 6
+const MAX_COLOR : int = 7
 const colors = {
+	0: Color('ffffff'), # white
 	1: Color('f4e601'), # yellow
 	2: Color('f28e1e'), # orange
 	3: Color('e12323'), # red
