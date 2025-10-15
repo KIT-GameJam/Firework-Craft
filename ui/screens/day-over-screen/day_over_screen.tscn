@@ -44,12 +44,25 @@ text = "Day 1"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("1_nk6t1")
 theme_type_variation = &"HeaderMedium"
 text = "How good did you craft today?"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme = ExtResource("1_nk6t1")
+max_columns = 2
+
+[node name="BarTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_nk6t1")
+theme_type_variation = &"HeaderSmall"
+text = "Total satisfaction"
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
