@@ -24,6 +24,7 @@ func _gui_input(event):
 		if event.is_released() and requestHover:
 			handle_abgabe(Global.selectedRequest.expected_product)
 			requestHover = false;
+			Global.request_inhand = false
 			Global.selectedRequest.queue_free()
 
 func _mouse_entered() -> void:
@@ -55,7 +56,7 @@ func handle_abgabe(expected_product: RequestResource) -> void:
 
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData
-	flask_color = clampi(flask_color + res.color_modifier , 1, Global.MAX_COLOR)
+	flask_color = flask_color + res.color_modifier % Global.MAX_COLOR
 	flask_size = clampi(flask_size + res.size_modifier, 1, Global.MAX_SIZE)
 	flask_corners = clampi(flask_corners + res.corner_modifier, 1, Global.MAX_CORNERS)
 	_update_particle_effect()
