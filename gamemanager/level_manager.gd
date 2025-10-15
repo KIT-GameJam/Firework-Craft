@@ -7,7 +7,7 @@ var stats_scene: PackedScene = load("res://ui/screens/day-over-screen/day_over_s
 var level_number = 0
 
 var level_times: Array[float] = [30, 25, 25, 22, 21, 20, 20, 20, 20, 15]
-var level_request_amounts: Array[int] = [2, 3, 4, 4, 5, 6, 7, 8, 9, 10]
+var level_request_amounts: Array[int] = [2, 3, 3, 4, 4, 4, 5, 5, 5, 6]
 
 func _ready() -> void:
 	_next_level()
