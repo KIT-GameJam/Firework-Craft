@@ -39,6 +39,7 @@ func _add_request() -> void:
 		stat.satisfaction = 0
 		stat.wait_time = 100
 		customerdata.append(stat)
+
 func _request_complete():
 	var stat = CustomerStats.new()
 	stat.satisfaction = 10

@@ -13,12 +13,13 @@ func _next_level() -> void:
 	level_number += 1
 	_make_level(level_number)
 
-func _make_level(nr: int) -> void:
+func _make_level(_nr: int) -> void:
 	var level: Level = level_scene.instantiate()
 	level.day_over.connect(_show_stats)
 	add_child(level)
 
-func _show_stats(v: Level.CustomerStats) -> void :
+func _show_stats(_v: Array[Level.CustomerStats]) -> void :
 	var curr_stats = stats_scene.instantiate()
+	curr_stats.set_stats(_v, level_number)
 	curr_stats.select_level_1.connect(_next_level)
 	add_child(curr_stats)
