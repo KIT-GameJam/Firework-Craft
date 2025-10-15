@@ -8,7 +8,7 @@
 script = ExtResource("3_w5t8o")
 size_modifier = -1
 color_modifier = 3
-corner_modifier = 3
+corner_modifier = -1
 metadata/_custom_type_script = "uid://dfnp38cb0upof"
 
 [node name="Pear" instance=ExtResource("1_h78ot")]

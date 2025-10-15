@@ -6,8 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_d0emo"]
 script = ExtResource("3_wtypy")
-size_modifier = -2
-corner_modifier = 3
+size_modifier = 2
+corner_modifier = 1
 metadata/_custom_type_script = "uid://dfnp38cb0upof"
 
 [node name="Duck" instance=ExtResource("1_lno2m")]
