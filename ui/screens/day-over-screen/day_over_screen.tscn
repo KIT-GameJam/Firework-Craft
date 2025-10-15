@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://u1l0uufcdwif"]
+[gd_scene load_steps=4 format=3 uid="uid://u1l0uufcdwif"]
 
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_nk6t1"]
 [ext_resource type="Script" uid="uid://b8kvsir2e8n1b" path="res://ui/screens/day-over-screen/day_over_screen.gd" id="2_hheev"]
+[ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/counter.png" id="3_wgr8u"]
 
 [node name="DayOverScreen" type="Control"]
 layout_mode = 3
@@ -13,6 +14,17 @@ grow_vertical = 2
 theme = ExtResource("1_nk6t1")
 script = ExtResource("2_hheev")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.26657522, 0.2665752, 0.2665752, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wgr8u")
+expand_mode = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -20,6 +32,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -42,6 +57,9 @@ layout_mode = 2
 theme = ExtResource("1_nk6t1")
 step = 1.0
 
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -49,5 +67,9 @@ size_flags_vertical = 6
 theme = ExtResource("1_nk6t1")
 theme_type_variation = &"FlatButton"
 text = "Continue"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 16
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

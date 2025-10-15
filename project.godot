@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Firework Craft"
+config/name="Crack the Formular"
 run/main_scene="res://gamemanager/gamemanager.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.19215687, 0.15294118, 0.11372549, 1)
 config/icon="res://icon.svg"
 
 [autoload]
