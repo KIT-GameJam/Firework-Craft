@@ -28,6 +28,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_yb8kn")
 script = ExtResource("1_ilwad")
+daylength = 1000.0
 ingredient_scenes = Array[PackedScene]([ExtResource("3_wg11f"), ExtResource("4_ggk2x"), ExtResource("5_5br84"), ExtResource("7_arlwx"), ExtResource("8_t6wdf"), ExtResource("8_5br84")])
 
 [node name="TextureRect" type="TextureRect" parent="."]

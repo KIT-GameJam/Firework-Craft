@@ -1,6 +1,7 @@
 class_name FlaskParticles
 extends Control
 
+@export var base_radius := 100.0
 @export var flask_color: Color = Color.WHITE
 @export var flask_size: int = 0
 @export var flask_corners: int = 0
@@ -9,6 +10,7 @@ extends Control
 @onready var form := $Form
 
 func _ready() -> void:
+	form.base_radius = base_radius
 	set_flask_color(flask_color)
 	set_flask_size(flask_size)
 	set_flask_corners(flask_corners)
