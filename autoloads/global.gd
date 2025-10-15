@@ -22,7 +22,8 @@ const colors = {
 	12: Color('8dbb27') # olive
 }
 
-var selected : bool = false
+var ingredient_inhand : bool = false
+var request_inhand : bool = false
 
 func set_game_manager(p_game_manager: GameManager):
 	game_manager = p_game_manager

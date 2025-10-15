@@ -24,7 +24,6 @@ func set_stats(stats_arr: Array[Level.CustomerStats], curr_level: int):
 	level_nr = curr_level
 
 func set_stats_list():
-	print(level_stats.size())
 	for x in range(level_stats.size()):
 		stats_list.add_item("Costumer " + str(x+1) + " with Satisfaction: " + str(level_stats.get(x).satisfaction) + ", Waittime: " +  str(level_stats.get(x).wait_time))
 

@@ -19,20 +19,19 @@ func _gui_input(event):
 		if event.is_released() and ingredients_in_me:
 			mix_res(Global.selected_res)
 			ingredients_in_me = false
-			Global.selected = false
+			Global.ingredient_inhand = false
 			Global.selected_res.queue_free()
 		if event.is_released() and requestHover:
 			var total_diff: int = is_as_requested(Global.selectedRequest.expected_product) # TODO Hier ist die final diff
-			print(total_diff)
 			requestHover = false;
 			Global.selectedRequest.queue_free()
 
 func _mouse_entered() -> void:
-	ingredients_in_me = Global.selected and not Global.selected_res == null
+	ingredients_in_me = Global.ingredient_inhand and not Global.selected_res == null
 	if not ingredients_in_me:
 		Global.selected_res = null
 		
-	requestHover = Global.selected and not Global.selectedRequest == null
+	requestHover = Global.request_inhand and not Global.selectedRequest == null
 	if not requestHover:
 		Global.selectedRequest = null
 	

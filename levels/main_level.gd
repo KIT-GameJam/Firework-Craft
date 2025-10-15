@@ -17,7 +17,6 @@ var customerdata: Array[CustomerStats] = []
 var request_scene: PackedScene = load("res://entities/requests/request.tscn")
 
 func _ready() -> void:
-	print("Start Level")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	for i in range(9):
 		_add_ingredient()
