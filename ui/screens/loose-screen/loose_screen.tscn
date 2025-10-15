@@ -49,7 +49,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("1_1vphk")
 theme_type_variation = &"HeaderMedium"
-text = "You did not good enought!"
+text = "You did not good enough!"
 horizontal_alignment = 1
 
 [node name="Restart" type="Button" parent="VBoxContainer"]
