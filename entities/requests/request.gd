@@ -23,7 +23,7 @@ func _ready() -> void:
 	textureRect.texture = textures[index]
 	
 	var r_size = randi_range(1, Global.MAX_SIZE)
-	var r_color = randi_range(1, Global.MAX_COLOR)
+	var r_color = randi_range(0, Global.MAX_COLOR - 1)
 	var r_corners = randi_range(1, Global.MAX_CORNERS)
 	
 	particles.set_flask_size(r_size)
