@@ -9,6 +9,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_5tgjf"]
 font_size = 60
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_27lof"]
 font_size = 41
@@ -40,6 +41,7 @@ texture = ExtResource("3_3qqp3")
 expand_mode = 1
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
