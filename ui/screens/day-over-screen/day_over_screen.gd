@@ -1,5 +1,7 @@
 extends Control
 
+const satisfaction_threshold := 50
+
 var level_nr: int = 0
 @onready var title : Label = $MarginContainer/VBoxContainer/Title
 @onready var progress_bar : ProgressBar = $MarginContainer/VBoxContainer/ProgressBar
@@ -7,6 +9,7 @@ var level_nr: int = 0
 var total_satisfaction : int = 0
 var level_stats : Array[Level.CustomerStats] = []
 signal select_level_1
+signal show_loose_screen
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,5 +38,8 @@ func calc_total_satisfaction():
 	total_satisfaction = (curr_satisfaction / float(level_stats.size()*10)) * 100
 	
 func _on_button_pressed() -> void:
-	select_level_1.emit()
+	if total_satisfaction < satisfaction_threshold:
+		show_loose_screen.emit()
+	else:
+		select_level_1.emit()
 	queue_free()

@@ -4,16 +4,21 @@ signal end
 
 var level_scene: PackedScene = load("res://levels/main_level.tscn")
 var stats_scene: PackedScene = load("res://ui/screens/day-over-screen/day_over_screen.tscn")
+var loose_scene: PackedScene = load("res://ui/screens/loose-screen/loose_screen.tscn")
 var level_number = 0
 
-var level_times: Array[float] = [30, 25, 25, 22, 21, 20, 20, 20, 20, 15]
-var level_request_amounts: Array[int] = [2, 3, 3, 4, 4, 4, 5, 5, 5, 6]
+var level_times: Array[float] = [9000, 30, 25, 25, 22, 21, 20, 20, 20, 20, 15]
+var level_request_amounts: Array[int] = [9000, 2, 3, 3, 4, 4, 4, 5, 5, 5, 6]
 
 func _ready() -> void:
 	_next_level()
 
 func _next_level() -> void:
 	level_number += 1
+	_make_level(level_number)
+
+func _start_from_first_level() -> void:
+	level_number = 1
 	_make_level(level_number)
 
 func _make_level(nr: int) -> void:
@@ -28,4 +33,13 @@ func _show_stats(_v: Array[Level.CustomerStats]) -> void :
 	var curr_stats = stats_scene.instantiate()
 	curr_stats.set_stats(_v, level_number)
 	curr_stats.select_level_1.connect(_next_level)
+	curr_stats.show_loose_screen.connect(_show_loose_screen)
 	add_child(curr_stats)
+
+func _show_loose_screen():
+	Sfx.play_sfx("loose")
+	var curr_loose_scene = loose_scene.instantiate()
+	curr_loose_scene.level_nr = level_number
+	curr_loose_scene.restart.connect(_start_from_first_level)
+	curr_loose_scene.go_main_menu.connect(func (): end.emit(); queue_free())
+	add_child(curr_loose_scene)
