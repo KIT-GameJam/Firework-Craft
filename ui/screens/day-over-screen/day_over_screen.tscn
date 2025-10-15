@@ -88,14 +88,16 @@ size_flags_vertical = 6
 theme_type_variation = &"FlatButton"
 text = "Continue"
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+theme_override_constants/separation = 5
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("4_bfjew")
+expand_mode = 2
 
 [node name="FlowerLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
