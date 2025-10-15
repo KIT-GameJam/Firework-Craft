@@ -21,6 +21,8 @@ class_name GameManager
 
 @onready var pause_menu: Control = %PauseMenu
 @onready var menu_layer: CanvasLayer = %MenuLayer
+@onready var audio_theme: AudioStreamPlayer = $Audio/Theme
+@onready var audio_menu: AudioStreamPlayer = $Audio/Menu
 
 var level = 0
 var completed_levels: Array[bool] = []
@@ -79,6 +81,7 @@ func _show_main_level() -> void:
 		next_level.reset.connect(_reload_current_level)
 	add_child(next_level)
 	current_level_node = next_level
+	_switch_to_theme_audio()
 	
 
 func _next_level() -> void:
@@ -136,6 +139,7 @@ func _show_title_screen() -> void:
 	title_screen.quit.connect(_quit_game)
 	title_screen.show_levels(has_multiple_levels)
 	menu_layer.add_child(title_screen)
+	_switch_to_menu_audio()
 
 func _show_level_select() -> void:
 	var level_select: Node = load("res://ui/screens/level-select-screen/level_select.tscn").instantiate()
@@ -174,3 +178,15 @@ func _quit_game() -> void:
 	
 func set_world_environment(env: Environment):
 	$WorldEnvironment.environment = env
+
+func _switch_to_menu_audio():
+	_stop_music()
+	audio_menu.play()
+
+func _switch_to_theme_audio():
+	_stop_music()
+	audio_theme.play()
+
+func _stop_music():
+	audio_theme.stop()
+	audio_menu.stop()
