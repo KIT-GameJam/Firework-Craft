@@ -3,6 +3,7 @@ extends Node
 var game_manager : GameManager = null
 var selected_res : AbstractIngredient = null
 var selectedRequest: Request = null
+var countedFlower : int = 0
 
 const MAX_CORNERS : int = 4
 const MAX_SIZE : int = 3

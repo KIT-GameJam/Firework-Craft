@@ -7,6 +7,7 @@ var level_nr: int = 0
 @onready var progress_bar : ProgressBar = $MarginContainer/VBoxContainer/ProgressBar
 @onready var stats_list : ItemList = $MarginContainer/VBoxContainer/ItemList
 @onready var wait_time_label: Label = $MarginContainer/VBoxContainer/AverageWaitTime
+@onready var flowers : Label = $MarginContainer/VBoxContainer/MarginContainer/FlowerLabel
 var total_satisfaction : int = 0
 var average_wait_time: int = 0
 var level_stats : Array[Level.CustomerStats] = []
@@ -19,7 +20,7 @@ func _ready() -> void:
 	calc_total_satisfaction()
 	set_stats_list()
 	wait_time_label.text += str(average_wait_time, 's')
-	print(average_wait_time)
+	flowers.text = str(Global.countedFlower)
 	progress_bar.value = 0
 	var tween = create_tween()
 	tween.tween_property(progress_bar, "value", total_satisfaction, 2.0) # (Zielwert, Dauer)

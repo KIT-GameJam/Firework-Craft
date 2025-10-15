@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dosk5yr5i0wq4"]
+
+[ext_resource type="Texture2D" uid="uid://ctem8rfvq44vw" path="res://textures/placeholder.png" id="1_fqvcd"]
+[ext_resource type="Script" uid="uid://ciyickadhg2oq" path="res://entities/ingredients/abstractIngredient.gd" id="2_eqwhc"]
+[ext_resource type="Script" uid="uid://dfnp38cb0upof" path="res://entities/ingredients/fireworkResource.gd" id="2_tgifm"]
+
+[sub_resource type="Resource" id="Resource_mux4a"]
+script = ExtResource("2_tgifm")
+metadata/_custom_type_script = "uid://dfnp38cb0upof"
+
+[node name="FlowerIngredient" type="TextureRect"]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -426.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fqvcd")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("2_eqwhc")
+resourceData = SubResource("Resource_mux4a")

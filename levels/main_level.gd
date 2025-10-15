@@ -10,6 +10,7 @@ signal day_over(info: Array[CustomerStats])
 @export var requests_amount: int = 3
 
 var customerdata: Array[CustomerStats] = []
+var nb_flowers: int = 0
 
 @export var ingredient_scenes: Array[PackedScene]
 @onready var ingredient_table: Node = $VBoxContainer/HBoxContainer2/IngredientTable

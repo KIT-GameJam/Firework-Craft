@@ -46,6 +46,7 @@ func _mouse_exited() -> void:
 
 func calc_values() -> void:
 	current_value = current_value + flask_color + flask_size + flask_corners
+
 	
 func handle_abgabe(expected_product: RequestResource) -> void:
 	var shapeDiff: int = max(0, abs(flask_corners - expected_product.corners) - expected_product.cornersTollerance)
@@ -55,14 +56,19 @@ func handle_abgabe(expected_product: RequestResource) -> void:
 	
 	var elapsed_time = roundi((Time.get_ticks_msec() - expected_product.start_time) / 1000.)
 	var satisfaction = max(0, 10 - total_diff)
-	
+
 	request_complete.emit(elapsed_time, satisfaction)
 
+func is_flower(exp_prod: FireworkResource) -> bool:
+	return (exp_prod.color_modifier == 0 and exp_prod.size_modifier == 0 and exp_prod.corner_modifier == 0)
+	
 func mix_res(res_abstr: AbstractIngredient) -> void:
 	var res = res_abstr.resourceData
 	flask_color = (flask_color + res.color_modifier + Global.MAX_COLOR) % Global.MAX_COLOR
 	flask_size = clampi(flask_size + res.size_modifier, 1, Global.MAX_SIZE)
 	flask_corners = clampi(flask_corners + res.corner_modifier, 1, Global.MAX_CORNERS)
+	if is_flower(res):
+		Global.countedFlower = Global.countedFlower + 1
 	_update_particle_effect()
 
 func reset():
