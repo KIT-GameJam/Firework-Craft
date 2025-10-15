@@ -19,8 +19,8 @@ func set_flask_size(new_size: int):
 	var particle_scale: int = 10 + new_size * 2
 	form.set_size(new_size)
 	particles.lifetime = 2 + .2 * new_size
-	particles.scale_amount_min = particle_scale - 2
-	particles.scale_amount_max = particle_scale + 2
+	particles.scale_amount_min = .8 + new_size * .2
+	particles.scale_amount_max = 1.2 + new_size * .2
 	particles.amount = particle_scale * 10
 	particles.speed_scale = 3 + .3 * new_size
 
