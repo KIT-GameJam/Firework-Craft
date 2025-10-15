@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv6c8eqmejewl"]
+[gd_scene load_steps=3 format=3 uid="uid://b5ek7wirwm6gy"]
 
 [ext_resource type="Script" uid="uid://b2ejlm452rxli" path="res://autoloads/sfx.gd" id="1_5iln5"]
 
@@ -6,4 +6,5 @@
 
 [node name="Sfx" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamPolyphonic_stp8y")
+bus = &"SFX"
 script = ExtResource("1_5iln5")

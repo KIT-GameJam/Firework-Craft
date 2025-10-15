@@ -7,9 +7,9 @@ enum AAMode_2D {DISABLED, MSAA_2X, MSAA_4X, MSAA_8X}
 enum AudioBus {MASTER, MUSIC, SFX, VOICE}
 
 func _register_settings() -> void:
-	_register_graphics_settings()
+	#_register_graphics_settings()
 	_register_audio_settings()
-	_register_controls_settings()
+	#_register_controls_settings()
 
 func _register_graphics_settings() -> void:
 	var graphics_category = Settings.SettingCategory.new("graphics", "Graphics")
@@ -77,15 +77,6 @@ func _register_audio_settings() -> void:
 													   1.0,
 													   func(volume): _set_audio_bus_volume(volume, AudioBus.SFX))
 	fine_control_category.add_setting(sfx_volume_setting)
-	
-	var voice_volume_setting = Settings.FloatSetting.new("volume_voice",
-														 "Volume (Voice)",
-														 100.0,
-														 0.0,
-														 150.0,
-														 1.0,
-														 func(volume): _set_audio_bus_volume(volume, AudioBus.VOICE))
-	fine_control_category.add_setting(voice_volume_setting)
 	
 	audio_category.add_sub_category(fine_control_category)
 	
