@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpr6du5ydm0lw"]
+[gd_scene load_steps=11 format=3 uid="uid://bpr6du5ydm0lw"]
 
 [ext_resource type="Texture2D" uid="uid://bugrq8paq2d7t" path="res://textures/Keycap.svg" id="1_hbk1g"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_x8l5g"]
 [ext_resource type="Script" uid="uid://c1i00arsdf2mw" path="res://ui/screens/control-screen/control_screen.gd" id="2_wdxwm"]
+[ext_resource type="Texture2D" uid="uid://by4k5n15o3guo" path="res://textures/backgrounds/tutorial.png" id="3_3qqp3"]
 [ext_resource type="Texture2D" uid="uid://bett8pw3uw006" path="res://textures/Space.svg" id="4_nvllw"]
 [ext_resource type="Texture2D" uid="uid://bhuy5siw5vkxi" path="res://textures/Mouse.svg" id="5_bb6ie"]
 
@@ -28,6 +29,16 @@ grow_vertical = 2
 theme = ExtResource("1_x8l5g")
 script = ExtResource("2_wdxwm")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3qqp3")
+expand_mode = 1
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -43,9 +54,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -576.0
-offset_top = 53.0
+offset_top = 24.0
 offset_right = 576.0
-offset_bottom = 113.0
+offset_bottom = 183.0
 grow_horizontal = 2
 text = "Controls
 "
@@ -54,6 +65,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="ControlImages" type="Node2D" parent="."]
+visible = false
 position = Vector2(306, 378)
 scale = Vector2(0.695, 0.695)
 

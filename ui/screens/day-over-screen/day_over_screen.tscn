@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_nk6t1"]
 [ext_resource type="Script" uid="uid://b8kvsir2e8n1b" path="res://ui/screens/day-over-screen/day_over_screen.gd" id="2_hheev"]
-[ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/counter.png" id="3_wgr8u"]
+[ext_resource type="Texture2D" uid="uid://dql4xoxu7o26a" path="res://textures/backgrounds/counter.png" id="3_wgr8u"]
 
 [node name="DayOverScreen" type="Control"]
 layout_mode = 3

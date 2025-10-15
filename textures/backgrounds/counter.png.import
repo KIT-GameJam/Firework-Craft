@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1osuosl7sjpy"
-path="res://.godot/imported/banana.png-8b890f77e579108a05d506b7546eaaeb.ctex"
+uid="uid://dql4xoxu7o26a"
+path="res://.godot/imported/counter.png-61310775152263dcb1d4d833c4b7c7a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/banana.png"
-dest_files=["res://.godot/imported/banana.png-8b890f77e579108a05d506b7546eaaeb.ctex"]
+source_file="res://textures/backgrounds/counter.png"
+dest_files=["res://.godot/imported/counter.png-61310775152263dcb1d4d833c4b7c7a9.ctex"]
 
 [params]
 
