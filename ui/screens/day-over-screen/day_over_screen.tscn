@@ -25,25 +25,26 @@ grow_vertical = 2
 texture = ExtResource("3_wgr8u")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 16.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_nk6t1")
 theme_type_variation = &"HeaderLarge"
 text = "Day 1"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 1
@@ -52,36 +53,31 @@ theme_type_variation = &"HeaderMedium"
 text = "How good did you craft today?"
 horizontal_alignment = 1
 
-[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+[node name="ItemList" type="ItemList" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme = ExtResource("1_nk6t1")
 
-[node name="BarTitle" type="Label" parent="VBoxContainer"]
+[node name="BarTitle" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_nk6t1")
 theme_type_variation = &"HeaderSmall"
 text = "Total satisfaction"
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_nk6t1")
 step = 1.0
 
-[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme = ExtResource("1_nk6t1")
 theme_type_variation = &"FlatButton"
 text = "Continue"
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 16
-
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,9 +1,9 @@
 extends Control
 
-var level_nr: int
-@onready var title : Label = $VBoxContainer/Title
-@onready var progress_bar : ProgressBar = $VBoxContainer/ProgressBar
-@onready var stats_list : ItemList = $VBoxContainer/ItemList
+var level_nr: int = 0
+@onready var title : Label = $MarginContainer/VBoxContainer/Title
+@onready var progress_bar : ProgressBar = $MarginContainer/VBoxContainer/ProgressBar
+@onready var stats_list : ItemList = $MarginContainer/VBoxContainer/ItemList
 var total_satisfaction : int = 0
 var level_stats : Array[Level.CustomerStats] = []
 signal select_level_1
