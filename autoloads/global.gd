@@ -9,12 +9,12 @@ const MAX_SIZE : int = 3
 const MAX_COLOR : int = 7
 const colors = {
 	0: Color('ffffff'), # white
-	1: Color('f4e601'), # yellow
+	1: Color('e12323'), # red
 	2: Color('f28e1e'), # orange
-	3: Color('e12323'), # red
-	4: Color('6d398b'), # purple
+	3: Color('f4e601'), # yellow
+	4: Color('018e5a'), # green
 	5: Color('2b70b1'), # blue
-	6: Color('018e5a'), # green
+	6: Color('6d398b'), # purple
 }
 
 var ingredient_inhand : bool = false
